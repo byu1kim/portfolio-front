@@ -1,7 +1,11 @@
 export default function About() {
   return (
-    <div>
-      <h1>About!</h1>
-    </div>
+    <main className="page">
+      <section>Banner</section>
+      <section>
+        Experience
+        <code>abccd</code>
+      </section>
+    </main>
   );
 }
