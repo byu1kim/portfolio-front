@@ -15,6 +15,14 @@ const Nav = () => {
     setNavOpen(!navOpen);
   };
 
+  const darkMode = () => {
+    document.documentElement.classList.add("dark");
+  };
+
+  const lightMode = () => {
+    document.documentElement.classList.remove("dark");
+  };
+
   useEffect(() => {
     let mediaQuery = window.matchMedia("(min-width: 800px");
     mediaQuery.addEventListener("change", isDesktop);
@@ -22,8 +30,8 @@ const Nav = () => {
   }, []);
 
   return (
-    <header>
-      <nav className={`bg-indigo-500 text-white  flex flex-wrap items-center justify-between w-full p-5`}>
+    <header className="relative w-full h-1 z-20">
+      <nav className="fixed flex flex-wrap items-center justify-between w-full p-5 dark:text-cyan-400">
         <div className="font-bold">
           <a href="/">BYUL</a>
         </div>
@@ -33,6 +41,11 @@ const Nav = () => {
             <i className="fa-solid fa-bars"></i>
           </div>
         </button>
+
+        <div>
+          <button onClick={darkMode}>Dark | </button>
+          <button onClick={lightMode}> Light</button>
+        </div>
 
         <div className={` ${navOpen ? "" : "hidden"} w-full`} id="menu">
           <ul className="text-center">
