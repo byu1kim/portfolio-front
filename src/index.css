@@ -30,6 +30,10 @@
   margin: 0;
   padding: 0;
 }
+.yoyo {
+  transition-delay: 1s;
+  --animate-delay: 0.9s;
+}
 .myTagCloud {
 }
 .myTagCloud span:hover {
