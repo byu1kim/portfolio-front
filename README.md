@@ -15,7 +15,7 @@
 
 ### Project Detail
 
-- [ ] comments
 - [v] slide show
+- [ ] comments
 
 ### Contact

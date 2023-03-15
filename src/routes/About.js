@@ -1,28 +1,44 @@
+import Chart from "../components/Chart";
+import { useEffect, useContext } from "react";
+import { GlobalContext } from "../components/Context";
+import WordCloud from "../components/WordCloud";
+import { chartData } from "../data/temp";
 export default function About() {
+  const { darkMode } = useContext(GlobalContext);
+
+  useEffect(() => {}, []);
+
   return (
     <main className="page">
-      <section className="grid grid-cols-1 md:grid-cols-2 border-b-2 border-red-500">
-        <div>
-          <div className="title">About Byul.</div>
-          <div>
-            Hello, I am a web developer based in Vancouver, BC
-            <button className="border rounded px-2">Download Resume</button>
+      <section className="grid grid-cols-1 md:grid-cols-2 border-b border-white">
+        <div className="flex flex-col justify-center pb-10">
+          <div className="title text-5xl text-center dark:text-white">About.</div>
+          <div className="pb-5">
+            Hi, I'm Byul Kim, a recent graduate with a passion for web development, based in Vancouver, BC
+          </div>
+          <div className="flex justify-center">
+            <button className="flex items-center rounded bg-blue-400  px-3 py-2 dark:bg-cyan-400">
+              Download Resume
+            </button>
           </div>
         </div>
-        <div>Image grayscale for both light/dark</div>
-      </section>
-
-      <section>
-        <div className="title">Skills</div>
         <div>
-          use graph charts :
-          https://velog.io/@eunjin/React-%EB%A6%AC%EC%95%A1%ED%8A%B8-%EA%B7%B8%EB%9E%98%ED%94%84%EC%B0%A8%ED%8A%B8-%EB%9D%BC%EC%9D%B4%EB%B8%8C%EB%9F%AC%EB%A6%AC-%EB%AA%A8%EC%9D%8C
+          {darkMode ? (
+            <img className="" src="https://i.imgur.com/KAVlh5Z.jpg" alt="dark-profile-img" />
+          ) : (
+            <img src="https://i.imgur.com/zC1s0t2.jpg" alt="light-profile-img" />
+          )}
         </div>
       </section>
 
-      <section>
-        <div className="title">What I've learned</div>
-        <div>~~~</div>
+      <section className=" ">
+        <div className="title text-center">Skills</div>
+        <Chart data={chartData} />
+        <div className="text-gray-500 font-bold text-2xl">Frontend</div>
+        HTML, CSS, Sass, Javascript, Bootstrap, jQuery, Tailwind
+        <div className="text-gray-500 font-bold text-2xl">Backend</div>
+        Node.JS, ASP.NET, Python, SQL, MongoDB
+        <WordCloud />
       </section>
     </main>
   );

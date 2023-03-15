@@ -1,8 +1,9 @@
-import { Link } from "react-router-dom";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
+import { GlobalContext } from "../components/Context";
 
 const Nav = () => {
-  const color = "indigo";
+  const { clickDarkMode, clickLightMode } = useContext(GlobalContext);
+
   const [navOpen, setNavOpen] = useState(false);
 
   const isDesktop = (e) => {
@@ -13,14 +14,6 @@ const Nav = () => {
 
   const showHideNav = () => {
     setNavOpen(!navOpen);
-  };
-
-  const darkMode = () => {
-    document.documentElement.classList.add("dark");
-  };
-
-  const lightMode = () => {
-    document.documentElement.classList.remove("dark");
   };
 
   useEffect(() => {
@@ -43,23 +36,23 @@ const Nav = () => {
         </button>
 
         <div>
-          <button onClick={darkMode}>Dark | </button>
-          <button onClick={lightMode}> Light</button>
+          <button onClick={clickDarkMode}>Dark | </button>
+          <button onClick={clickLightMode}> Light</button>
         </div>
 
         <div className={` ${navOpen ? "" : "hidden"} w-full`} id="menu">
           <ul className="text-center">
             <li className={`hover:text-indigo-700`}>
-              <Link to="/"> Home</Link>
+              <a href="/"> Home</a>
             </li>
             <li className={`hover:text-indigo-700`}>
-              <Link to="/about">About</Link>
+              <a href="/about">About</a>
             </li>
             <li className={`hover:text-indigo-700`}>
-              <Link to="/projects">Projects</Link>
+              <a href="/projects">Projects</a>
             </li>
             <li className={`hover:text-indigo-700`}>
-              <Link to="/contact">Contact</Link>
+              <a href="/contact">Contact</a>
             </li>
           </ul>
         </div>
