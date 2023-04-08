@@ -9,7 +9,7 @@ export default function Detail() {
   const project = data.projects[id - 1];
 
   const settings = {
-    customPaging: (i) => <img src={project.mobile.imgUrl[i]} alt={project.title} />,
+    customPaging: (i) => <img src={project.images[i]} alt={project.title} />,
     dots: true,
     arrows: false,
     dotsClass: "slick-dots slick-thumb",
@@ -22,7 +22,7 @@ export default function Detail() {
   };
 
   return (
-    <main className="page ">
+    <main className="page p-10">
       <div className="pb-5 hover:text-blue-500">
         <Link to="/projects">
           <i className="fa-solid fa-arrow-left"></i> Back to Projects
@@ -34,12 +34,11 @@ export default function Detail() {
         <div className="font-color pt-2">{project.summary}</div>
         <div className="pt-5">
           <Slider {...settings}>
-            <div className="">
-              <img src={`${project.mobile.imgUrl[0]}`} alt={project.title} />
-            </div>
-            <div>
-              <img src={`${project.mobile.imgUrl[1]}`} alt={project.title} />
-            </div>
+            {project.images.map((i) => (
+              <div>
+                <img src={i} alt={project.title} />
+              </div>
+            ))}
           </Slider>
         </div>
         {/* */}

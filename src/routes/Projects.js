@@ -29,44 +29,56 @@ export default function Projects() {
   };
 
   const clearFilter = () => {
-    document.querySelectorAll(".tagBtn").forEach((btn) => btn.classList.remove("borders"));
+    document.querySelectorAll(".tagBtn").forEach((btn) => btn.classList.remove("tag"));
     setFilters(tags);
   };
 
   return (
-    <main className="page">
-      <div className="text-4xl">Projects</div>
-      <div className="flex pt-8">
-        <button onClick={clearFilter}>Clear</button>
-        {tags
-          ? tags.map((tag, index) => (
-              <button
-                key={index}
-                className="tagBtn bg-gray-200 rounded px-2 mr-1"
-                onClick={(e) => {
-                  e.currentTarget.classList.toggle("borders");
-                  addFilter(tag);
-                }}
-              >
-                {tag}
-              </button>
-            ))
-          : ""}
+    <main className="page p-10">
+      <div className="title center">Projects.</div>
+      <div className="flex-wrap center gap-3 ">
+        <button onClick={clearFilter} className="hover:text-rose-500 dark:text-rose-300">
+          Clear
+        </button>
+        <div>
+          {tags
+            ? tags.splice(0, 5).map((tag, index) => (
+                <button
+                  key={index}
+                  className="tagBtn btns2 px-2 mr-1"
+                  onClick={(e) => {
+                    e.currentTarget.classList.toggle("tag");
+                    addFilter(tag);
+                  }}
+                >
+                  {tag}
+                </button>
+              ))
+            : ""}
+        </div>
       </div>
 
-      <section className="pt-8 grid gird-cols-2 md:grid-cols-2 gap-5">
+      <section className="pt-8 grid  md:grid-cols-2 gap-5">
         {projects
           ? projects.map((item) =>
               item.tags.some((tag) => filters.includes(tag.name)) ? (
-                <div key={item.id} className="shadow-lg shadow-gray-300 rounded-xl mb-8 relative text-white">
-                  <Link to={`/projects/${item.id}`}>
-                    <img src={`${item.mobile.thumbUrl}`} alt={`${item.title}`} className="rounded-xl" />
-                    <div className="md:opacity-0 bottom-0 h-3/4 w-full absolute bg-gradient-to-t from-black/80 to-transparent flex flex-col justify-end p-5 rounded-xl md:hover:opacity-100 ">
-                      <div className="uppercase font-bold">{item.title}</div>
-                      <div>{item.summary}</div>
-                    </div>
-                  </Link>
-                </div>
+                <>
+                  <div key={item.id} className="  relative  ">
+                    <Link to={`/projects/${item.id}`}>
+                      <img src={`${item.thumb}`} alt={`${item.title}`} className=" " />
+                      <div className="hidden md:flex md:opacity-0 bottom-0 h-full w-full absolute bg-white/50 center p-10 md:hover:opacity-100 ">
+                        <div className="font-bold fs-3">{item.title}</div>
+                        <div className="text-center">{item.summary}</div>
+                        <button className="btns pt-7">View Project</button>
+                      </div>
+                      <div className="absolute bottom-0 h-full w-full p-3 flex flex-col justify-end bg-gradient-to-t from-black/50 to-transparent md:hidden">
+                        <div className="font-bold fs-4 text-white">{item.title}</div>
+                        <div className="text-xs text-white">{item.summary}</div>
+                        <div className="text-cyan-300">React, JS</div>
+                      </div>
+                    </Link>
+                  </div>
+                </>
               ) : (
                 ""
               )

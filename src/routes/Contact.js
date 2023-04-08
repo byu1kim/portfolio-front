@@ -1,5 +1,20 @@
 import { Fade } from "react-awesome-reveal";
-
+import { AttentionSeeker, Zoom } from "react-awesome-reveal";
+import {
+  Animator,
+  ScrollContainer,
+  ScrollPage,
+  batch,
+  FadeIn,
+  FadeOut,
+  MoveIn,
+  MoveOut,
+  StickyIn,
+  StickyOut,
+  ZoomIn,
+  ZoomOut,
+  Sticky,
+} from "react-scroll-motion";
 export default function Contact() {
   return (
     <main className="page">

@@ -1,5 +1,5 @@
-import { projects } from "../data/temp";
-import { AttentionSeeker, Fade, Zoom } from "react-awesome-reveal";
+import { useContext } from "react";
+import { Link } from "react-router-dom";
 import {
   Animator,
   ScrollContainer,
@@ -7,94 +7,103 @@ import {
   batch,
   FadeIn,
   FadeOut,
+  Fade,
   MoveIn,
   MoveOut,
   StickyIn,
-  StickyOut,
-  ZoomIn,
-  ZoomOut,
   Sticky,
 } from "react-scroll-motion";
+import { GlobalContext } from "../components/Context";
 
 export default function Home() {
-  // react reveal
-  // react scroll
-  // react scroll motion
-
+  const { darkMode } = useContext(GlobalContext);
   return (
-    <ScrollContainer className="page">
+    <ScrollContainer className="relative z-10 text-center font-color dark:darkmode">
       <ScrollPage className="">
-        <section className="z-20 h-screen font-black text-indigo-300 w-full flex flex-col justify-center items-center ">
-          <div className="flex relative z-10">
-            <Zoom tada cascade="true" damping={0.1}>
-              <span className="letter z-10 before:content-['I']">I</span>
-              <span className="letter ">&nbsp;</span>
-              <span className="letter before:content-['a']">a</span>
-              <span className="letter before:content-['m']">m</span>
-              <span className="letter ">&nbsp;</span>
-              <span className="letter before:content-['B'] before:-rotate-12">B</span>
-              <span className="letter before:content-['y']">y</span>
-              <span className="letter before:content-['u']">u</span>
-              <span className="letter before:content-['l']">l</span>
-            </Zoom>
+        <section className="w-100 h-screen center font-extrabold tracking-tighter bg-cyan-500 dark:text-cyan-300 dark:bg-transparent">
+          <div className="fs-0 text-sha text-white dark:text-cyan-300 max-w-xl">Byul Kim.</div>
+          <div className="fs-1 text-sha text-gray-300 mt-3 dark:text-white">Web Developer</div>
+          <div className="fixed bottom-0 p-5 z-0 down-arrow">
+            <i className="fa-solid fa-chevron-down"></i>
           </div>
-
-          <div className="leading-7 flex relative yoyo animate__delay-2s">
-            <Zoom cascade="true" damping={0.1} className="yoyo animate__delay-2s">
-              <span className="letter"></span>
-              <span className="letter"></span>
-              <span className="letter"></span>
-              <span className="letter"></span>
-              <span className="letter"></span>
-              <span className="letter"></span>
-              <span className="letter"></span>
-              <span className="letter"></span>
-              <span className="letter"></span>
-              <span className="letter before:content-['W']">W</span>
-              <span className="letter before:content-['e']">e</span>
-              <span className="letter before:content-['b']">b</span>
-              <span className="letter">&nbsp;</span>
-              <span className="letter before:content-['D']  before:-rotate-12">D</span>
-              <span className="letter before:content-['e']">e</span>
-              <span className="letter before:content-['v']">v</span>
-              <span className="letter before:content-['e']">e</span>
-              <span className="letter before:content-['l']">l</span>
-              <span className="letter before:content-['o']">o</span>
-              <span className="letter before:content-['p']">p</span>
-              <span className="letter before:content-['e']">e</span>
-              <span className="letter before:content-['r']">r</span>
-              {/* <div className="back-letter absolute text-rose-200 z-0">Web&nbsp;Developer</div> */}
-            </Zoom>
-          </div>
+          {darkMode ? <div></div> : ""}
         </section>
       </ScrollPage>
-      <ScrollPage className="z-20">
-        <Animator animation={batch(Sticky(), FadeIn())}>
-          <div className="title">How do I pronounce your name?</div>
-        </Animator>
-      </ScrollPage>
-      <ScrollPage>
-        <Animator animation={batch(Sticky())}>
-          <code> &#91; bjʌl &#93;</code>
-          <div>It means Star in Korean</div>
-          <button>More about me</button>
-        </Animator>
-      </ScrollPage>
-      <ScrollPage className="z-20">
-        <Animator className="title" animation={batch(StickyIn(), FadeIn(), FadeOut(), MoveOut(0, -200))}>
-          Recent Projects
+
+      {/* ABOUT ME */}
+      <ScrollPage className="center">
+        <Animator className=" " animation={batch(Fade(), Sticky(), MoveOut(0, -300))}>
+          <div>
+            <i className="fa-solid fa-star text-cyan-500 dark:text-cyan-300"></i>
+          </div>
+          <div className="w-screen p-5 fs-4">
+            Hello! I'm Byul, a web developer based in Vancouver. <br /> I've built for myself, now let me build for you.
+          </div>
         </Animator>
       </ScrollPage>
 
-      {projects.map((project) => (
-        <ScrollPage>
-          <Fade>
-            <div>{project.title}</div>
-          </Fade>
+      <ScrollPage className="title">
+        <Animator className="" animation={batch(Fade(), MoveIn(), Sticky(), MoveOut(0, -300))}>
+          <div className="w-screen max-w-3xl p-5"> How do I pronounce your name?</div>
+        </Animator>
+      </ScrollPage>
 
-          <img src={`${project.desktop.thumbUrl}`} alt={project.title} />
-        </ScrollPage>
-      ))}
+      <ScrollPage className="z-20">
+        <Animator animation={batch(Fade(), Sticky(), MoveOut(0, -300))}>
+          <div className="w-screen leading-10">
+            <code> &#91; bjʌl &#93;</code>
+            <div className="fs-3">It means Star in Korean</div>
+            <div className="mt-10">
+              <Link to="/about" className="btns">
+                More about me
+              </Link>
+            </div>
+          </div>
+        </Animator>
+      </ScrollPage>
+
+      <ScrollPage className="title">
+        <Animator animation={batch(Fade(), Sticky(), MoveOut(0, -300))}>Recent Projects</Animator>
+      </ScrollPage>
+
+      {/* PROJECTS */}
+      <ScrollPage className="">
+        <Animator className="z-20" animation={batch(StickyIn(), FadeIn(), MoveOut())}>
+          <div className="w-screen">
+            <div className="font-bold fs-2 ">Byultube</div>
+            <div className="fs-4 mt-2">Youtube Clone App built in Node.js</div>
+            <div className="fs-5 mt-10 text-upper">
+              <Link to="/about" className="btns">
+                View Project
+              </Link>
+            </div>
+          </div>
+        </Animator>
+        <Animator className="center" animation={batch(MoveIn(), MoveOut(), FadeOut())}>
+          <div className="thumb relative w-100 max-w-2xl m-7 overflow-hidden shadow-md rounded-lg">
+            <img src="https://i.imgur.com/MBArd5I.png" alt="byultube" className="w-100" />
+          </div>
+        </Animator>
+      </ScrollPage>
+
+      <ScrollPage className="">
+        <Animator className="z-20" animation={batch(StickyIn(), FadeIn(), MoveOut())}>
+          <div className="w-screen">
+            <div className="font-bold fs-2 ">Movie App</div>
+            <div className="fs-4 mt-2">Movie app built in React.js</div>
+            <div className="fs-5 mt-10 text-upper">
+              <Link to="/about" className="btns">
+                View Project
+              </Link>
+            </div>
+          </div>
+        </Animator>
+        <Animator className="center" animation={batch(MoveIn(), MoveOut(), FadeOut())}>
+          <div className="thumb relative w-100 max-w-2xl m-7 overflow-hidden shadow-md rounded-lg">
+            <img src="https://i.imgur.com/4pXB2BQ.png" alt="byulflix" className="w-100" />
+          </div>
+        </Animator>
+      </ScrollPage>
     </ScrollContainer>
   );
 }

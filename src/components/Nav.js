@@ -23,35 +23,36 @@ const Nav = () => {
   }, []);
 
   return (
-    <header className="relative w-full h-1 z-20">
-      <nav className="fixed flex flex-wrap items-center justify-between w-full p-5 dark:text-cyan-400">
-        <div className="font-bold">
-          <a href="/">BYUL</a>
-        </div>
-
-        <button onClick={showHideNav}>
-          <div className="visible justify-center items-center">
+    <header className="relative w-full  z-20">
+      <nav className="fixed flex flex-wrap w-full dark:text-cyan-400">
+        <button onClick={showHideNav} className="w-1/3 p-4">
+          <div className="text-left">
             <i className="fa-solid fa-bars"></i>
           </div>
         </button>
 
-        <div>
+        <div className="font-bold w-1/3 text-center p-4">
+          <a href="/">BYUL</a>
+        </div>
+
+        <div className="w-1/3 text-right p-4">
           <button onClick={clickDarkMode}>Dark | </button>
+
           <button onClick={clickLightMode}> Light</button>
         </div>
 
-        <div className={` ${navOpen ? "" : "hidden"} w-full`} id="menu">
-          <ul className="text-center">
-            <li className={`hover:text-indigo-700`}>
+        <div className={` ${navOpen ? "" : "hidden"} w-full p-4 pt-0`} id="menu">
+          <ul className="">
+            <li className={`pb-2 hover:text-indigo-700`}>
               <a href="/"> Home</a>
             </li>
-            <li className={`hover:text-indigo-700`}>
+            <li className={`pb-2 hover:text-indigo-700`}>
               <a href="/about">About</a>
             </li>
-            <li className={`hover:text-indigo-700`}>
+            <li className={`pb-2 hover:text-indigo-700`}>
               <a href="/projects">Projects</a>
             </li>
-            <li className={`hover:text-indigo-700`}>
+            <li className={`pb-2 hover:text-indigo-700`}>
               <a href="/contact">Contact</a>
             </li>
           </ul>
