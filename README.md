@@ -28,3 +28,9 @@ Protfolio showcase 2023 built by React
 - [ ] dark mode
 - [ ] resume download
 - [ ] comments (Lambda?)
+
+- [ ] navigation
+- [ ] skills to icons
+- [ ] get in touch
+- [ ] projects design
+- [ ] slide show > dots, arrow

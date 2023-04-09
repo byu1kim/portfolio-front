@@ -14,19 +14,36 @@ import {
   Sticky,
 } from "react-scroll-motion";
 import { GlobalContext } from "../components/Context";
+import { projects } from "../data/temp";
 
 export default function Home() {
   const { darkMode } = useContext(GlobalContext);
+
   return (
     <ScrollContainer className="relative z-10 text-center font-color dark:darkmode">
       <ScrollPage className="">
         <section className="w-100 h-screen center font-extrabold tracking-tighter bg-cyan-500 dark:text-cyan-300 dark:bg-transparent">
-          <div className="fs-0 text-sha text-white dark:text-cyan-300 max-w-xl">Byul Kim.</div>
-          <div className="fs-1 text-sha text-gray-300 mt-3 dark:text-white">Web Developer</div>
-          <div className="fixed bottom-0 p-5 z-0 down-arrow">
+          <div className="fs-0 text-sha text-white dark:text-cyan-300 max-w-xl relative z-50">Byul Kim.</div>
+          <div className="fs-1 text-sha text-gray-300 mt-3 dark:text-white relative z-20">Web Developer</div>
+          <div className="fixed bottom-0 p-5 z-0 down-arrow ">
             <i className="fa-solid fa-chevron-down"></i>
           </div>
-          {darkMode ? <div></div> : ""}
+          {darkMode ? (
+            <div></div>
+          ) : (
+            <div className="absolute w-full h-full">
+              <Animator animation={batch(MoveOut(0, -100))} className="h-full absolute bottom-0 w-full z-10">
+                <img src="https://i.imgur.com/cNlKnjh.png" alt="cloud" className=" object-cover h-full w-full" />
+              </Animator>
+              <Animator animation={batch(MoveOut(0, 100))} className="h-full absolute bottom-0 w-full z-10">
+                <img src="https://i.imgur.com/hpRbEPu.png" alt="cloud" className=" object-cover h-full w-full" />
+              </Animator>
+              <Animator animation={batch(MoveOut(0, 50))} className="h-full absolute mt-20 w-full z-30">
+                <div className="h-full bg-gradient-to-b from-transparent to-white absolute w-full"></div>
+                <img src="https://i.imgur.com/lap9e9o.png" alt="cloud" className="object-cover h-full w-full" />
+              </Animator>
+            </div>
+          )}
         </section>
       </ScrollPage>
 
@@ -37,7 +54,8 @@ export default function Home() {
             <i className="fa-solid fa-star text-cyan-500 dark:text-cyan-300"></i>
           </div>
           <div className="w-screen p-5 fs-4">
-            Hello! I'm Byul, a web developer based in Vancouver. <br /> I've built for myself, now let me build for you.
+            Hello! I'm Byul, a web developer based in Vancouver. <br /> I've built various applications for myself, now
+            let me build something for you.
           </div>
         </Animator>
       </ScrollPage>
@@ -70,8 +88,8 @@ export default function Home() {
       <ScrollPage className="">
         <Animator className="z-20" animation={batch(StickyIn(), FadeIn(), MoveOut())}>
           <div className="w-screen">
-            <div className="font-bold fs-2 ">Byultube</div>
-            <div className="fs-4 mt-2">Youtube Clone App built in Node.js</div>
+            <div className="font-bold fs-2 ">{projects[0].title}</div>
+            <div className="fs-4 mt-2">{projects[0].summary}</div>
             <div className="fs-5 mt-10 text-upper">
               <Link to="/about" className="btns">
                 View Project
@@ -81,7 +99,7 @@ export default function Home() {
         </Animator>
         <Animator className="center" animation={batch(MoveIn(), MoveOut(), FadeOut())}>
           <div className="thumb relative w-100 max-w-2xl m-7 overflow-hidden shadow-md rounded-lg">
-            <img src="https://i.imgur.com/MBArd5I.png" alt="byultube" className="w-100" />
+            <img src={projects[0].thumb} alt={projects[0].title} className="w-100" />
           </div>
         </Animator>
       </ScrollPage>
@@ -89,8 +107,8 @@ export default function Home() {
       <ScrollPage className="">
         <Animator className="z-20" animation={batch(StickyIn(), FadeIn(), MoveOut())}>
           <div className="w-screen">
-            <div className="font-bold fs-2 ">Movie App</div>
-            <div className="fs-4 mt-2">Movie app built in React.js</div>
+            <div className="font-bold fs-2 ">{projects[1].title}</div>
+            <div className="fs-4 mt-2">{projects[1].summary}</div>
             <div className="fs-5 mt-10 text-upper">
               <Link to="/about" className="btns">
                 View Project
@@ -100,7 +118,7 @@ export default function Home() {
         </Animator>
         <Animator className="center" animation={batch(MoveIn(), MoveOut(), FadeOut())}>
           <div className="thumb relative w-100 max-w-2xl m-7 overflow-hidden shadow-md rounded-lg">
-            <img src="https://i.imgur.com/4pXB2BQ.png" alt="byulflix" className="w-100" />
+            <img src={projects[1].thumb} alt={projects[1].title} className="w-100" />
           </div>
         </Animator>
       </ScrollPage>

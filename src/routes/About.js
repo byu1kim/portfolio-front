@@ -24,7 +24,7 @@ export default function About() {
           </div>
           <div className="px-10 sm:px-0">
             {darkMode ? (
-              <img className="" src="https://i.imgur.com/KAVlh5Z.jpg" alt="dark-profile-img" />
+              <img className="object-cover h-full" src="https://i.imgur.com/KAVlh5Z.jpg" alt="dark-profile-img" />
             ) : (
               <img className="object-cover h-full" src="https://i.imgur.com/zC1s0t2.jpg" alt="light-profile-img" />
             )}
