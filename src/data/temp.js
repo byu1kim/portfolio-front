@@ -7,7 +7,7 @@ export const projects = [
       "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nostrum porro sed alias dolorem repudiandae expedita cum dolor deserunt? Molestiae iure voluptatem natus neque error quaerat aliquam ipsam voluptates possimus hic",
     website: "https://byultube.onrender.com/",
     github: "https://github.com/kchong30/pick-and-go",
-    thumb: "https://i.imgur.com/Iomj6SN.png",
+    thumb: "https://i.imgur.com/hiPSgSo.png",
     images: [
       "https://i.imgur.com/zw3OMaI.png",
       "https://i.imgur.com/bnyUmAP.png",
@@ -37,7 +37,7 @@ export const projects = [
       "The frontend application was built using the React JavaScript library. It interfaces with a movie API to retrieve data and display it to users. This means that users can interact with the application to search for movies, view movie details, and potentially perform other actions related to movies such as favourite button. The application likely uses modern web development techniques such as asynchronous data fetching, responsive design, and state management to provide a smooth and intuitive user experience. Overall, the application offers a convenient and visually appealing way to browse and interact with movie data.",
     website: "https://byu1kim.github.io/react-movie-app",
     github: "https://github.com/byu1kim/react-movie-app",
-    thumb: "https://i.imgur.com/n3kxE7s.png",
+    thumb: "https://i.imgur.com/Z56waMb.png",
     images: [
       "https://i.imgur.com/8L2FnyK.jpg",
       "https://i.imgur.com/c56M1kX.jpg",

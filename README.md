@@ -23,3 +23,5 @@ Protfolio showcase 2023 built by React
 - [ ] comments (Lambda?)
 - [ ] skills to icons
 - [ ] get in touch
+- [ ] data to firebase/or other db
+- [ ] scroll effect

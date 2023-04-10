@@ -13,13 +13,23 @@ export default function About() {
     // grid grid-cols-1 sm:grid-cols-2
     <main className="page px-10">
       <section className="pt-14 min-h-screen md:h-screen md:overflow-hidden">
-        <Fade className="title center py-5 mt-5 h-1/6">About Me.</Fade>
+        <Fade className="title center py-5 mt-5 h-1/6">
+          <div>About Me.</div>
+        </Fade>
         <div className="grid grid-cols-1 gap-5 md:grid-cols-2 md:gap-0 h-5/6">
           <div className="px-10 md:px-0 md:order-2">
             {darkMode ? (
-              <img className="object-cover h-full" src="https://i.imgur.com/KAVlh5Z.jpg" alt="dark-profile-img" />
+              <img
+                className="object-cover w-full h-full"
+                src="https://i.imgur.com/KAVlh5Z.jpg"
+                alt="dark-profile-img"
+              />
             ) : (
-              <img className="object-cover h-full" src="https://i.imgur.com/zC1s0t2.jpg" alt="light-profile-img" />
+              <img
+                className="object-cover w-full h-full"
+                src="https://i.imgur.com/zC1s0t2.jpg"
+                alt="light-profile-img"
+              />
             )}
           </div>
           <div className="center md:order-1">

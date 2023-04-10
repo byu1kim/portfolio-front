@@ -52,17 +52,17 @@ const Nav = () => {
         <div
           className={` ${
             navOpen ? "opacity-100" : "opacity-0 hidden"
-          } w-full p-4 pt-0 md:w-1/3 md:order-2 md:center md:p-0 bg-white dark:bg-gray-900 `}
+          } w-full p-4 pt-0 md:w-1/3 md:order-2 md:center md:p-0  dark:bg-gray-900 `}
           id="menu"
         >
           <ul className="uppercase md:flex md:gap-10 md:items-center">
-            <li className="pb-2 hover:bg-white hover:text-cyan-500 dark:hover:text-cyan-300 dark:bg-transparent md:p-0">
+            <li className="pb-2   hover:text-cyan-500 dark:hover:text-cyan-300 dark:bg-transparent md:p-0">
               <Link to="/">Home</Link>
             </li>
-            <li className="pb-2 hover:bg-white hover:text-cyan-500 dark:hover:text-cyan-300 dark:bg-transparent md:p-0">
+            <li className="pb-2   hover:text-cyan-500 dark:hover:text-cyan-300 dark:bg-transparent md:p-0">
               <Link to="/about">About</Link>
             </li>
-            <li className="pb-2 hover:bg-white hover:text-cyan-500 dark:hover:text-cyan-300 dark:bg-transparent md:p-0">
+            <li className="pb-2   hover:text-cyan-500 dark:hover:text-cyan-300 dark:bg-transparent md:p-0">
               <Link to="/projects">Projects</Link>
             </li>
           </ul>
