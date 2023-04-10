@@ -8,7 +8,10 @@ const Nav = () => {
   const [navOpen, setNavOpen] = useState(false);
 
   const isDesktop = (e) => {
+    console.log("???");
     if (e.matches) {
+      setNavOpen(true);
+    } else {
       setNavOpen(false);
     }
   };
@@ -22,6 +25,8 @@ const Nav = () => {
     mediaQuery.addEventListener("change", isDesktop);
     if (mediaQuery) {
       setNavOpen(true);
+    } else {
+      setNavOpen(false);
     }
     return () => mediaQuery.addEventListener("change", isDesktop);
   }, []);

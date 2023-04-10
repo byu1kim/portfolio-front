@@ -10,7 +10,7 @@
     @apply border-2 border-red-500;
   }
   .font-color {
-    @apply text-gray-600 dark:text-white;
+    @apply text-gray-900 dark:text-white;
   }
   .text-point {
     @apply text-cyan-500 hover:text-cyan-700 dark:text-cyan-300 dark:hover:text-cyan-500;
@@ -41,7 +41,7 @@
     @apply fs-1 text-cyan-500 font-bold py-5 dark:text-cyan-300;
   }
   .sub-title {
-    @apply fs-3 text-cyan-500 font-bold py-5 dark:text-cyan-300;
+    @apply fs-3 text-cyan-500 font-bold dark:text-cyan-300;
   }
   .center {
     @apply flex flex-col justify-center items-center;
@@ -52,18 +52,18 @@
   .btns2 {
     @apply text-point rounded border  border-none text-point   dark:border-cyan-300 dark:hover:border-cyan-500;
   }
+  .btns3 {
+    @apply px-2 py-1 tracking-tight bg-cyan-500 text-white hover:bg-cyan-700 hover:tracking-wider dark:text-black dark:bg-cyan-300 dark:hover:bg-cyan-500;
+  }
   .tag {
     @apply bg-cyan-500 text-white dark:bg-cyan-300 dark:text-gray-900 hover:bg-white hover:border-rose-500 hover:text-rose-500;
+  }
+  .icon {
+    @apply bg-cyan-500 p-5 m-2 rounded-full aspect-square text-white dark:bg-cyan-300 dark:text-gray-900;
   }
 }
 
 /* CSS */
-/* .aa {
-}
-.aa img {
-  object-fit: cover;
-  height: 100%;
-} */
 
 * {
   box-sizing: border-box;
@@ -75,11 +75,6 @@
 .yoyo {
   transition-delay: 1s;
   --animate-delay: 0.9s;
-}
-.myTagCloud {
-}
-.myTagCloud span:hover {
-  transform: scale(1.2);
 }
 
 .text {
@@ -99,8 +94,12 @@ code {
 }
 
 /* Home */
+.text-sha-white {
+  text-shadow: 0px 0px 5px rgba(255, 255, 255, 0.7);
+}
+
 .text-sha {
-  text-shadow: 0px 0px 5px rgba(0, 0, 0, 0.5);
+  text-shadow: 0px 0px 5px rgba(0, 0, 0, 0.7);
 }
 
 .down-arrow {
@@ -119,14 +118,14 @@ code {
   }
 }
 
-.thumb::before {
+/* .thumb::before {
   top: 0;
   left: 0;
   content: "";
   width: 100%;
   height: 100%;
-  background-color: #e0f2fe;
-  opacity: 0.7;
+  background-color: black;
+  opacity: 0.5;
   position: absolute;
   z-index: 20;
 }
@@ -138,10 +137,10 @@ code {
   width: 100%;
   height: 100%;
   background-color: black;
-  opacity: 0.8;
+  opacity: 0.5;
   position: absolute;
   z-index: 20;
-}
+} */
 
 /* Slick */
 

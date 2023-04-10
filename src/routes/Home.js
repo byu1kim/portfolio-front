@@ -54,8 +54,8 @@ export default function Home() {
             <i className="fa-solid fa-star text-cyan-500 dark:text-cyan-300"></i>
           </div>
           <div className="w-screen p-5 fs-4">
-            Hello! I'm Byul, a web developer based in Vancouver. <br /> I've built various applications for myself, now
-            let me build something for you.
+            Hello! I'm Byul, a web developer based in Vancouver. <br /> I've built various applications for myself,
+            <br /> Now let me build something for you.
           </div>
         </Animator>
       </ScrollPage>
@@ -69,10 +69,10 @@ export default function Home() {
       <ScrollPage className="z-20">
         <Animator animation={batch(Fade(), Sticky(), MoveOut(0, -300))}>
           <div className="w-screen leading-10">
-            <code> &#91; bjʌl &#93;</code>
-            <div className="fs-3">It means Star in Korean</div>
+            <code className="fs-4"> &#91; bjʌl &#93;</code>
+            <div className="fs-3">It means 'Star' in Korean</div>
             <div className="mt-10">
-              <Link to="/about" className="btns">
+              <Link to="/about" className="btns3">
                 More about me
               </Link>
             </div>
@@ -88,17 +88,17 @@ export default function Home() {
       <ScrollPage className="">
         <Animator className="z-20" animation={batch(StickyIn(), FadeIn(), MoveOut())}>
           <div className="w-screen">
-            <div className="font-bold fs-2 ">{projects[0].title}</div>
+            <div className="font-bold fs-2">{projects[0].title}</div>
             <div className="fs-4 mt-2">{projects[0].summary}</div>
             <div className="fs-5 mt-10 text-upper">
-              <Link to="/about" className="btns">
+              <Link to="/about" className="btns3">
                 View Project
               </Link>
             </div>
           </div>
         </Animator>
-        <Animator className="center" animation={batch(MoveIn(), MoveOut(), FadeOut())}>
-          <div className="thumb relative w-100 max-w-2xl m-7 overflow-hidden shadow-md rounded-lg">
+        <Animator className="center" animation={batch(MoveIn(), MoveOut(0, -100), FadeOut())}>
+          <div className="thumb relative w-100 max-w-2xl m-7 overflow-hidden opacity-50">
             <img src={projects[0].thumb} alt={projects[0].title} className="w-100" />
           </div>
         </Animator>
@@ -107,17 +107,17 @@ export default function Home() {
       <ScrollPage className="">
         <Animator className="z-20" animation={batch(StickyIn(), FadeIn(), MoveOut())}>
           <div className="w-screen">
-            <div className="font-bold fs-2 ">{projects[1].title}</div>
+            <div className="font-bold fs-2">{projects[1].title}</div>
             <div className="fs-4 mt-2">{projects[1].summary}</div>
             <div className="fs-5 mt-10 text-upper">
-              <Link to="/about" className="btns">
+              <Link to="/about" className="btns3">
                 View Project
               </Link>
             </div>
           </div>
         </Animator>
-        <Animator className="center" animation={batch(MoveIn(), MoveOut(), FadeOut())}>
-          <div className="thumb relative w-100 max-w-2xl m-7 overflow-hidden shadow-md rounded-lg">
+        <Animator className="center" animation={batch(MoveIn(), MoveOut(0, -100), FadeOut())}>
+          <div className="thumb relative w-100 max-w-2xl m-7 overflow-hidden opacity-50">
             <img src={projects[1].thumb} alt={projects[1].title} className="w-100" />
           </div>
         </Animator>
