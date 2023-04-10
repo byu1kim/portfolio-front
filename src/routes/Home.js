@@ -23,8 +23,8 @@ export default function Home() {
     <ScrollContainer className="relative z-10 text-center font-color dark:darkmode">
       <ScrollPage className="">
         <section className="w-100 h-screen center font-extrabold tracking-tighter bg-cyan-500 dark:text-cyan-300 dark:bg-transparent">
-          <div className="fs-0 text-sha text-white dark:text-cyan-300 max-w-xl relative z-50">Byul Kim.</div>
-          <div className="fs-1 text-sha text-gray-300 mt-3 dark:text-white relative z-20">Web Developer</div>
+          <div className="fs-0   text-white dark:text-cyan-300 max-w-xl relative z-50">Byul Kim.</div>
+          <div className="fs-1   text-gray-500 mt-3 dark:text-white relative z-50">Web Developer</div>
           <div className="fixed bottom-0 p-5 z-0 down-arrow ">
             <i className="fa-solid fa-chevron-down"></i>
           </div>
@@ -33,10 +33,10 @@ export default function Home() {
           ) : (
             <div className="absolute w-full h-full">
               <Animator animation={batch(MoveOut(0, -100))} className="h-full absolute bottom-0 w-full z-10">
-                <img src="https://i.imgur.com/cNlKnjh.png" alt="cloud" className=" object-cover h-full w-full" />
+                <img src="https://i.imgur.com/cNlKnjh.png" alt="cloud" className="object-cover h-full w-full" />
               </Animator>
               <Animator animation={batch(MoveOut(0, 100))} className="h-full absolute bottom-0 w-full z-10">
-                <img src="https://i.imgur.com/hpRbEPu.png" alt="cloud" className=" object-cover h-full w-full" />
+                <img src="https://i.imgur.com/hpRbEPu.png" alt="cloud" className="object-cover h-full w-full" />
               </Animator>
               <Animator animation={batch(MoveOut(0, 50))} className="h-full absolute mt-20 w-full z-30">
                 <div className="h-full bg-gradient-to-b from-transparent to-white absolute w-full"></div>
@@ -51,7 +51,7 @@ export default function Home() {
       <ScrollPage className="center">
         <Animator className=" " animation={batch(Fade(), Sticky(), MoveOut(0, -300))}>
           <div>
-            <i className="fa-solid fa-star text-cyan-500 dark:text-cyan-300"></i>
+            <i className="fa-solid fa-star text-rose-500 dark:text-cyan-300"></i>
           </div>
           <div className="w-screen p-5 fs-4">
             Hello! I'm Byul, a web developer based in Vancouver. <br /> I've built various applications for myself,
@@ -91,7 +91,7 @@ export default function Home() {
             <div className="font-bold fs-2">{projects[0].title}</div>
             <div className="fs-4 mt-2">{projects[0].summary}</div>
             <div className="fs-5 mt-10 text-upper">
-              <Link to="/about" className="btns3">
+              <Link to={`/projects/${projects[0].id}`} className="btns3">
                 View Project
               </Link>
             </div>
@@ -110,7 +110,7 @@ export default function Home() {
             <div className="font-bold fs-2">{projects[1].title}</div>
             <div className="fs-4 mt-2">{projects[1].summary}</div>
             <div className="fs-5 mt-10 text-upper">
-              <Link to="/about" className="btns3">
+              <Link to={`/projects/${projects[1].id}`} className="btns3">
                 View Project
               </Link>
             </div>

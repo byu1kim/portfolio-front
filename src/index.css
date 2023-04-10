@@ -13,7 +13,7 @@
     @apply text-gray-900 dark:text-white;
   }
   .text-point {
-    @apply text-cyan-500 hover:text-cyan-700 dark:text-cyan-300 dark:hover:text-cyan-500;
+    @apply text-cyan-500 hover:text-rose-400 dark:text-cyan-300 dark:hover:text-rose-400;
   }
   .fs-0 {
     @apply text-6xl sm:text-7xl md:text-8xl lg:text-9xl;
@@ -25,7 +25,7 @@
     @apply text-3xl sm:text-4xl md:text-5xl lg:text-6xl;
   }
   .fs-3 {
-    @apply text-2xl sm:text-3xl md:text-4xl lg:text-5xl;
+    @apply text-2xl sm:text-3xl;
   }
   .fs-4 {
     @apply text-xl sm:text-2xl md:text-3xl lg:text-4xl;
@@ -38,7 +38,7 @@
     @apply z-10 relative max-w-6xl m-auto;
   }
   .title {
-    @apply fs-1 text-cyan-500 font-bold py-5 dark:text-cyan-300;
+    @apply fs-1 text-cyan-500 font-bold dark:text-cyan-300;
   }
   .sub-title {
     @apply fs-3 text-cyan-500 font-bold dark:text-cyan-300;
@@ -46,20 +46,22 @@
   .center {
     @apply flex flex-col justify-center items-center;
   }
+
   .btns {
     @apply text-point tracking-tight font-semibold border-b border-cyan-500 text-point hover:tracking-wider hover:border-cyan-700 dark:border-cyan-300 dark:hover:border-cyan-500;
   }
+
   .btns2 {
-    @apply text-point rounded border  border-none text-point   dark:border-cyan-300 dark:hover:border-cyan-500;
+    @apply text-point rounded border-none text-point;
   }
   .btns3 {
-    @apply px-2 py-1 tracking-tight bg-cyan-500 text-white hover:bg-cyan-700 hover:tracking-wider dark:text-black dark:bg-cyan-300 dark:hover:bg-cyan-500;
+    @apply px-2 py-1 tracking-tight bg-cyan-500 text-white hover:bg-rose-400 hover:tracking-wider dark:text-black dark:bg-cyan-300 dark:hover:bg-rose-400;
   }
   .tag {
-    @apply bg-cyan-500 text-white dark:bg-cyan-300 dark:text-gray-900 hover:bg-white hover:border-rose-500 hover:text-rose-500;
+    @apply bg-cyan-500 text-white dark:bg-cyan-300 dark:text-gray-900;
   }
   .icon {
-    @apply bg-cyan-500 p-5 m-2 rounded-full aspect-square text-white dark:bg-cyan-300 dark:text-gray-900;
+    @apply bg-cyan-500 h-full p-3 rounded-full text-white dark:bg-cyan-300 dark:text-gray-900;
   }
 }
 
@@ -99,7 +101,11 @@ code {
 }
 
 .text-sha {
-  text-shadow: 0px 0px 5px rgba(0, 0, 0, 0.7);
+  text-shadow: 0px 0px 10px rgba(255, 255, 255, 0.9);
+}
+
+.dark .text-sha {
+  text-shadow: 0px 0px 5px rgba(0, 0, 0, 0.9);
 }
 
 .down-arrow {
@@ -118,56 +124,22 @@ code {
   }
 }
 
-/* .thumb::before {
-  top: 0;
-  left: 0;
-  content: "";
-  width: 100%;
-  height: 100%;
-  background-color: black;
-  opacity: 0.5;
-  position: absolute;
-  z-index: 20;
-}
-
-.dark .thumb::before {
-  top: 0;
-  left: 0;
-  content: "";
-  width: 100%;
-  height: 100%;
-  background-color: black;
-  opacity: 0.5;
-  position: absolute;
-  z-index: 20;
-} */
-
 /* Slick */
-
-.slick-list {
-}
 
 .slick-dots {
   display: block;
   bottom: -50px;
 }
 
-.slick-thumb li {
-  margin: 10px;
-  width: 50px;
-  height: 30px;
-  background-position: center;
-  overflow: hidden;
-  filter: grayscale(1);
-  transition: transform 0.2s ease-in-out, filter 0.2s ease-in-out;
+.slick-thumb .slick-active div {
+  background-color: #06b6d4;
 }
 
-.slick-thumb li:hover {
-  transform: scale(1.1);
-  transition: transform 0.2s ease-in-out, filter 0.2s ease-in-out;
+.dark .slick-thumb .slick-active div {
+  background-color: #67e8f9;
 }
 
-.slick-dots .slick-active {
-  transition: transform 0.2s ease-in-out, filter 0.2s ease-in-out;
-  filter: grayscale(0);
+.slick-next:before,
+.slick-prev:before {
+  text-shadow: 0 0 3px rgba(0, 0, 0, 0.3);
 }

@@ -8,7 +8,6 @@ const Nav = () => {
   const [navOpen, setNavOpen] = useState(false);
 
   const isDesktop = (e) => {
-    console.log("???");
     if (e.matches) {
       setNavOpen(true);
     } else {
@@ -32,8 +31,8 @@ const Nav = () => {
   }, []);
 
   return (
-    <header className="relative w-full z-20">
-      <nav className="fixed flex flex-wrap w-full dark:text-cyan-400">
+    <header className="fixed w-full z-50 p-2 font-color">
+      <nav className="flex flex-wrap w-full">
         <button onClick={showHideNav} className="w-1/3 p-4 md:hidden">
           <div className="text-left">
             <i className="fa-solid fa-bars"></i>
@@ -51,17 +50,19 @@ const Nav = () => {
         </div>
 
         <div
-          className={` ${navOpen ? "opacity-100" : "opacity-0"} w-full p-4 pt-0 md:w-1/3 md:order-2 md:center md:p-0  `}
+          className={` ${
+            navOpen ? "opacity-100" : "opacity-0 hidden"
+          } w-full p-4 pt-0 md:w-1/3 md:order-2 md:center md:p-0 bg-white dark:bg-gray-900 `}
           id="menu"
         >
-          <ul className=" md:flex md:gap-5 md:items-center">
-            <li className={`pb-2 hover:text-indigo-700 md:p-0`}>
-              <Link to="/"> Home</Link>
+          <ul className="uppercase md:flex md:gap-10 md:items-center">
+            <li className="pb-2 hover:bg-white hover:text-cyan-500 dark:hover:text-cyan-300 dark:bg-transparent md:p-0">
+              <Link to="/">Home</Link>
             </li>
-            <li className={`pb-2 hover:text-indigo-700 md:p-0`}>
+            <li className="pb-2 hover:bg-white hover:text-cyan-500 dark:hover:text-cyan-300 dark:bg-transparent md:p-0">
               <Link to="/about">About</Link>
             </li>
-            <li className={`pb-2 hover:text-indigo-700 md:p-0`}>
+            <li className="pb-2 hover:bg-white hover:text-cyan-500 dark:hover:text-cyan-300 dark:bg-transparent md:p-0">
               <Link to="/projects">Projects</Link>
             </li>
           </ul>

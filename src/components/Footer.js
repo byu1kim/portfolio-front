@@ -131,23 +131,23 @@ export default function Footer() {
       <footer className="text-center p-5 z-20 relative bg-white dark:bg-gray-900">
         <div className="flex gap-2 justify-center m-2">
           <a href="/">
-            <i className="fa-solid fa-envelope text-point"></i>
+            <i className="fa-solid fa-envelope"></i>
           </a>
 
           <a href="https://github.com/byu1kim">
-            <i className="fa-brands fa-github text-point"></i>
+            <i className="fa-brands fa-github"></i>
           </a>
 
           <a href="https://www.linkedin.com/in/byul-kim-523362250">
-            <i className="fa-brands fa-linkedin text-point"></i>{" "}
+            <i className="fa-brands fa-linkedin"></i>{" "}
           </a>
 
           <a href="https://instagram.com/byu1kim">
-            <i className="fa-brands fa-instagram text-point"></i>{" "}
+            <i className="fa-brands fa-instagram"></i>{" "}
           </a>
 
           <a href="https://www.youtube.com/@byulkim3356">
-            <i className="fa-brands fa-youtube text-point"></i>{" "}
+            <i className="fa-brands fa-youtube"></i>{" "}
           </a>
         </div>
         <div className="text-xs"> &copy; 2023 Byul Kim. All rights reserved.</div>

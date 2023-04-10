@@ -1,5 +1,5 @@
 import * as data from "../data/temp";
-import { Link, useParams } from "react-router-dom";
+import { Link, useParams, Navigate } from "react-router-dom";
 import Slider from "react-slick";
 import { PrevArrow, NextArrow } from "../components/SlickArrows";
 
@@ -8,10 +8,13 @@ export default function Detail() {
 
   const project = data.projects[id - 1];
 
+  if (!project) {
+    return <Navigate to="/*" replace="true" />;
+  }
+
   const settings = {
-    customPaging: (i) => <img src={project.images[i]} alt={project.title} />,
     dots: true,
-    arrows: false,
+    arrows: true,
     dotsClass: "slick-dots slick-thumb",
     infinite: true,
     speed: 500,
@@ -19,47 +22,52 @@ export default function Detail() {
     slidesToScroll: 1,
     prevArrow: <PrevArrow />,
     nextArrow: <NextArrow />,
+    customPaging: (i) => <div className="w-1.5 h-1.5 bg-gray-300 rounded-full dark:bg-gray-500"></div>,
   };
 
   return (
-    <main className="page p-10">
-      <div className="pb-5 hover:text-blue-500">
+    <main className="page p-10 pt-14 ">
+      <div className="py-5 hover:text-cyan-500">
         <Link to="/projects">
           <i className="fa-solid fa-arrow-left"></i> Back to Projects
         </Link>
       </div>
       <hr />
-      <div>
-        <div className="text-2xl font-bold pt-5">{project.title}</div>
-        <div className="font-color pt-2">{project.summary}</div>
-        <div className="pt-5">
-          <Slider {...settings}>
+
+      <div className="mt-10 mb-3 title md:text-5xl lg:text-5xl text-center"> {project.title}</div>
+      <div className="mb-5 font-color text-center pb-5 text-lg md:text-xl">{project.summary}</div>
+
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
+        <div className="mb-5">
+          <Slider {...settings} className="">
+            <img src={project.thumb} alt={project.title} className="bg-rose-100" />
             {project.images.map((i) => (
-              <div>
-                <img src={i} alt={project.title} />
-              </div>
+              <img src={i} key={i} alt={project.title} />
             ))}
           </Slider>
         </div>
-        {/* */}
-        <div className="pt-12 font-bold">Detail</div>
-        <div className="pt-3">{project.detail}</div>
-        <div className="pt-8 font-bold">Technologies</div>
-        <div className="pt-3 flex capitalize text-sm">
-          {project.tags.map((item) => (
-            <div key={item.id} className="bg-gray-300 mr-2 rounded px-2 font-bold">
-              {item.name}
-            </div>
-          ))}
-        </div>
-        <div className="pt-8 font-bold">Website</div>
-        <div className="pt-3 ">
-          <a href={project.website}>{project.website}</a>
-        </div>
 
-        <div className="pt-8 font-bold">Github</div>
-        <div className="pt-3 ">
-          <a href={project.github}>{project.github}</a>
+        {/* */}
+        <div className="">
+          <div className="sub-title">Detail</div>
+          <div className="pt-3">{project.detail}</div>
+          <div className="pt-8 sub-title">Technologies</div>
+          <div className="pt-3 flex  text-sm">
+            {project.tags.map((item) => (
+              <div key={item.id} className="bg-gray-300 mr-2 rounded px-2 font-bold text-black">
+                {item.name}
+              </div>
+            ))}
+          </div>
+          <div className="pt-8 sub-title">Website</div>
+          <div className="pt-3 hover:text-rose-500 dark:hover:text-rose-300">
+            <a href={project.website}>{project.website}</a>
+          </div>
+
+          <div className="pt-8 sub-title">Github</div>
+          <div className="pt-3 hover:text-rose-500 dark:hover:text-rose-300">
+            <a href={project.github}>{project.github}</a>
+          </div>
         </div>
       </div>
     </main>

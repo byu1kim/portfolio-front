@@ -17,20 +17,9 @@ Protfolio showcase 2023 built by React
 
 ### TO DO
 
-- [ ] dark/light toggle
-- [x] footer
-- [x] particle
-- [ ] light background : cloud
-
-- [x] Home design
-- [ ] About design
-- [ ] Project detail
-- [ ] dark mode
+- [ ] navigation
+- [ ] project upload
 - [ ] resume download
 - [ ] comments (Lambda?)
-
-- [v] navigation
 - [ ] skills to icons
 - [ ] get in touch
-- [ ] projects design
-- [ ] slide show > dots, arrow
