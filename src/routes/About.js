@@ -1,8 +1,10 @@
 import { useEffect, useContext } from "react";
+import { Link } from "react-router-dom";
 import { GlobalContext } from "../components/Context";
 import { Fade } from "react-awesome-reveal";
 import { skills } from "../data/temp";
 import Contact from "../components/Contact";
+import myPDF from "../data/byul_resume.pdf";
 
 export default function About() {
   const { darkMode } = useContext(GlobalContext);
@@ -62,7 +64,11 @@ export default function About() {
               </div>
             </Fade>
             <Fade className="mt-5 mb-10">
-              <button className="btns3">Download Resume</button>
+              <button className="btns3">
+                <a href={myPDF} download="byul_resume.pdf">
+                  Download Resume
+                </a>
+              </button>
             </Fade>
           </div>
         </div>
@@ -108,9 +114,9 @@ export default function About() {
             </div>
           </Fade>
 
-          <Fade>
+          {/* <Fade>
             <Contact />
-          </Fade>
+          </Fade> */}
         </div>
       </section>
     </main>

@@ -40,7 +40,7 @@ export default function Projects() {
         <button onClick={clearFilter} className="hover:text-rose-500 dark:hover:text-rose-300">
           Clear
         </button>
-        <div>
+        <div className="text-center ">
           {tags
             ? tags.splice(0, 5).map((tag, index) => (
                 <button
