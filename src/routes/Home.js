@@ -22,7 +22,7 @@ export default function Home() {
     <ScrollContainer className="relative z-10 text-center font-color dark:darkmode">
       <ScrollPage className="">
         <section className="w-full h-screen center font-extrabold tracking-tighter bg-cyan-500 dark:text-cyan-300 dark:bg-transparent">
-          <div className="fs-0 w-full text-white dark:text-cyan-300 relative z-50 borders">Byul Kim.</div>
+          <div className="fs-0 w-full text-white dark:text-cyan-300 relative z-50">Byul Kim.</div>
           <div className="fs-1 text-gray-500 mt-3 dark:text-white relative z-50">Web Developer</div>
           <div className="fixed bottom-0 p-5 z-0 down-arrow ">
             <i className="fa-solid fa-chevron-down"></i>
