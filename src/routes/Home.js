@@ -18,8 +18,6 @@ import { GlobalContext } from "../components/Context";
 export default function Home() {
   const { darkMode, projects } = useContext(GlobalContext);
 
-  console.log("HE?", projects);
-
   return (
     <ScrollContainer className="relative z-10 text-center font-color dark:darkmode">
       <ScrollPage className="">
@@ -48,10 +46,9 @@ export default function Home() {
           )}
         </section>
       </ScrollPage>
-
       {/* ABOUT ME */}
       <ScrollPage className="center">
-        <Animator className=" " animation={batch(Fade(), Sticky(), MoveOut(0, -300))}>
+        <Animator className=" " animation={batch(Fade(), MoveOut(0, -300))}>
           <div>
             <i className="fa-solid fa-star text-rose-500 dark:text-cyan-300"></i>
           </div>
@@ -61,15 +58,13 @@ export default function Home() {
           </div>
         </Animator>
       </ScrollPage>
-
       <ScrollPage className="title">
-        <Animator className="" animation={batch(Fade(), MoveIn(), Sticky(), MoveOut(0, -300))}>
+        <Animator className="" animation={batch(Fade(), MoveIn(), StickyIn(), MoveOut(0, -300))}>
           <div className="w-screen max-w-3xl p-5"> How do I pronounce your name?</div>
         </Animator>
       </ScrollPage>
-
       <ScrollPage className="z-20">
-        <Animator animation={batch(Fade(), Sticky(), MoveOut(0, -300))}>
+        <Animator animation={batch(Fade(), StickyIn(), MoveOut(0, -300))}>
           <div className="w-screen leading-10">
             <code className="fs-4"> &#91; bjʌl &#93;</code>
             <div className="fs-3">It means 'Star' in Korean</div>
@@ -81,35 +76,38 @@ export default function Home() {
           </div>
         </Animator>
       </ScrollPage>
-
       <ScrollPage className="title">
         <Animator animation={batch(Fade(), Sticky(), MoveOut(0, -300))}>Recent Projects</Animator>
       </ScrollPage>
 
       {/* PROJECTS */}
-      {projects && (
-        <>
-          {" "}
-          <ScrollPage className="">
-            <Animator className="z-20" animation={batch(StickyIn(), FadeIn(), MoveOut())}>
-              <div className="w-screen">
-                <div className="font-bold fs-2">{projects[0].title}</div>
-                <div className="fs-4 mt-2">{projects[0].summary}</div>
-                <div className="fs-5 mt-10 text-upper">
-                  <Link to={`/projects/${projects[0].id}`} className="btns3">
-                    View Project
-                  </Link>
-                </div>
+      <ScrollPage className="">
+        <Animator className="z-20" animation={batch(StickyIn(), FadeIn(), MoveOut())}>
+          {projects && (
+            <div className="w-screen">
+              <div className="font-bold fs-2">{projects[0].title}</div>
+              <div className="fs-4 mt-2">{projects[0].summary}</div>
+              <div className="fs-5 mt-10 text-upper">
+                <Link to={`/projects/${projects[0].id}`} className="btns3">
+                  View Project
+                </Link>
               </div>
-            </Animator>
-            <Animator className="center" animation={batch(MoveIn(), MoveOut(0, -100), FadeOut())}>
-              <div className="thumb relative w-100 max-w-2xl m-7 overflow-hidden opacity-50">
-                <img src={projects[0].thumb} alt={projects[0].title} className="w-100" />
-              </div>
-            </Animator>
-          </ScrollPage>
-          <ScrollPage className="">
-            <Animator className="z-20" animation={batch(StickyIn(), FadeIn(), MoveOut())}>
+            </div>
+          )}
+        </Animator>
+        <Animator className="center" animation={batch(MoveIn(), MoveOut(0, -100), FadeOut())}>
+          {projects && (
+            <div className="thumb relative w-100 max-w-2xl m-7 overflow-hidden opacity-50">
+              <img src={projects[0].thumb} alt={projects[0].title} className="w-100" />
+            </div>
+          )}
+        </Animator>
+      </ScrollPage>
+
+      <ScrollPage className="">
+        <Animator className="z-20" animation={batch(StickyIn(), FadeIn(), MoveOut())}>
+          {projects && (
+            <>
               <div className="w-screen">
                 <div className="font-bold fs-2">{projects[1].title}</div>
                 <div className="fs-4 mt-2">{projects[1].summary}</div>
@@ -119,15 +117,19 @@ export default function Home() {
                   </Link>
                 </div>
               </div>
-            </Animator>
-            <Animator className="center" animation={batch(MoveIn(), MoveOut(0, -100), FadeOut())}>
+            </>
+          )}
+        </Animator>
+        <Animator className="center" animation={batch(MoveIn(), MoveOut(0, -100), FadeOut())}>
+          {projects && (
+            <>
               <div className="thumb relative w-100 max-w-2xl m-7 overflow-hidden opacity-50">
                 <img src={projects[1].thumb} alt={projects[1].title} className="w-100" />
               </div>
-            </Animator>
-          </ScrollPage>{" "}
-        </>
-      )}
+            </>
+          )}
+        </Animator>
+      </ScrollPage>
     </ScrollContainer>
   );
 }

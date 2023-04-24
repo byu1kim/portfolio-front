@@ -1,3 +1,13 @@
+/*
+Movie App
+Pick and go
+Wordbook
+Youtube Clone
+Web Scrap
+Portfolio
+Notes
+*/
+
 export const projects = [
   {
     id: 1,

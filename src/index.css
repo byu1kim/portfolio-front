@@ -46,11 +46,6 @@
   .center {
     @apply flex flex-col justify-center items-center;
   }
-
-  .btns {
-    @apply text-point tracking-tight font-semibold border-b border-cyan-500 text-point hover:tracking-wider hover:border-cyan-700 dark:border-cyan-300 dark:hover:border-cyan-500;
-  }
-
   .btns2 {
     @apply text-point rounded border-none text-point;
   }
