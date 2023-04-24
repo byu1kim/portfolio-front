@@ -19,10 +19,17 @@ const Nav = () => {
     setNavOpen(!navOpen);
   };
 
+  const handleClick = () => {
+    let mediaQuery = window.matchMedia("(min-width: 768px");
+    if (!mediaQuery.matches) {
+      setNavOpen(false);
+    }
+  };
+
   useEffect(() => {
-    let mediaQuery = window.matchMedia("(min-width: 800px");
+    let mediaQuery = window.matchMedia("(min-width: 768px");
     mediaQuery.addEventListener("change", isDesktop);
-    if (mediaQuery) {
+    if (mediaQuery.matches) {
       setNavOpen(true);
     } else {
       setNavOpen(false);
@@ -40,7 +47,7 @@ const Nav = () => {
         </button>
 
         <div className="font-bold w-1/3 text-center p-4 md:order-1 md:text-left">
-          <a href="/">BYUL</a>
+          <Link to="/">BYUL</Link>
         </div>
 
         <div className="w-1/3 text-right p-4 md:order-3">
@@ -55,14 +62,23 @@ const Nav = () => {
           } w-full p-4 pt-0 md:w-1/3 md:order-2 md:center md:p-0  dark:bg-gray-900 `}
           id="menu"
         >
-          <ul className="uppercase md:flex md:gap-10 md:items-center">
-            <li className="pb-2   hover:text-cyan-500 dark:hover:text-cyan-300 dark:bg-transparent md:p-0">
+          <ul className="uppercase md:flex md:gap-3 md:items-center">
+            <li
+              className="p-2 hover:text-cyan-500 hover:bg-white/20 dark:hover:text-cyan-300 dark:bg-transparent"
+              onClick={handleClick}
+            >
               <Link to="/">Home</Link>
             </li>
-            <li className="pb-2   hover:text-cyan-500 dark:hover:text-cyan-300 dark:bg-transparent md:p-0">
+            <li
+              className="p-2 hover:text-cyan-500 hover:bg-white/20 dark:hover:text-cyan-300 dark:bg-transparent"
+              onClick={handleClick}
+            >
               <Link to="/about">About</Link>
             </li>
-            <li className="pb-2   hover:text-cyan-500 dark:hover:text-cyan-300 dark:bg-transparent md:p-0">
+            <li
+              className="p-2 hover:text-cyan-500 hover:bg-white/20 dark:hover:text-cyan-300 dark:bg-transparent"
+              onClick={handleClick}
+            >
               <Link to="/projects">Projects</Link>
             </li>
           </ul>
