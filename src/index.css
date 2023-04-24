@@ -61,22 +61,11 @@
 }
 
 /* CSS */
-
+/*  transition: all 0.2s ease-in-out; */
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  transition: all 0.2s ease-in-out;
-}
-
-.yoyo {
-  transition-delay: 1s;
-  --animate-delay: 0.9s;
-}
-
-.text {
-  background-color: white;
-  color: red;
 }
 
 body {

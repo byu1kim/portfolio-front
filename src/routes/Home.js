@@ -46,9 +46,10 @@ export default function Home() {
           )}
         </section>
       </ScrollPage>
+
       {/* ABOUT ME */}
       <ScrollPage className="center">
-        <Animator className=" " animation={batch(Fade(), MoveOut(0, -300))}>
+        <Animator className=" " animation={batch(Fade(), Sticky(), MoveOut(0, -300))}>
           <div>
             <i className="fa-solid fa-star text-rose-500 dark:text-cyan-300"></i>
           </div>
@@ -76,8 +77,9 @@ export default function Home() {
           </div>
         </Animator>
       </ScrollPage>
+
       <ScrollPage className="title">
-        <Animator animation={batch(Fade(), Sticky(), MoveOut(0, -300))}>Recent Projects</Animator>
+        <Animator animation={batch(Fade(), Sticky(), MoveOut())}>Recent Projects</Animator>
       </ScrollPage>
 
       {/* PROJECTS */}
@@ -95,7 +97,7 @@ export default function Home() {
             </div>
           )}
         </Animator>
-        <Animator className="center" animation={batch(MoveIn(), MoveOut(0, -100), FadeOut())}>
+        <Animator className="center" animation={batch(MoveIn(), MoveOut(), FadeOut())}>
           {projects && (
             <div className="thumb relative w-100 max-w-2xl m-7 overflow-hidden opacity-50">
               <img src={projects[0].thumb} alt={projects[0].title} className="w-100" />
@@ -120,7 +122,7 @@ export default function Home() {
             </>
           )}
         </Animator>
-        <Animator className="center" animation={batch(MoveIn(), MoveOut(0, -100), FadeOut())}>
+        <Animator className="center" animation={batch(MoveIn(), MoveOut(), FadeOut())}>
           {projects && (
             <>
               <div className="thumb relative w-100 max-w-2xl m-7 overflow-hidden opacity-50">
