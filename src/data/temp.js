@@ -151,19 +151,29 @@ export const projects = [
 // EJS, PUG, HTML?, AWS??, GULP?, WEBPACK?
 export const tags = [
   { id: 1, name: "Javascript" },
-  { id: 2, name: "Node.js" },
+  { id: 2, name: "Python" },
   { id: 3, name: "ASP.Net" },
-  { id: 4, name: "Python" },
-  { id: 5, name: "PHP" },
-  { id: 6, name: "React" },
-  { id: 7, name: "jQuery" },
-  { id: 8, name: "SQL" },
-  { id: 9, name: "MongoDB" },
-  { id: 10, name: "CSS" },
-  { id: 11, name: "Sass" },
-  { id: 12, name: "Bootstrap" },
-  { id: 13, name: "Tailwind" },
+  { id: 4, name: "Node.js" },
+
+  { id: 5, name: "React" },
+  { id: 6, name: "jQuery" },
+
+  { id: 7, name: "AWS" },
+  { id: 8, name: "Azure" },
+
+  { id: 9, name: "MySQL" },
+  { id: 10, name: "PostgreSQL" },
+  { id: 11, name: "MongoDB" },
+
+  { id: 12, name: "Firebase" },
+  { id: 13, name: "HTML" },
+  { id: 14, name: "CSS" },
+  { id: 15, name: "Sass" },
+  { id: 16, name: "Bootstrap" },
+  { id: 17, name: "Tailwind" },
 ];
+
+// PHP, Laravel, Vue, Angular
 
 // full stack, frontend, backend, school project, individual project, industry project
 export const categories = [

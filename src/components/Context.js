@@ -3,6 +3,7 @@ export const GlobalContext = createContext();
 
 export function GlobalProvider({ children }) {
   const [darkMode, setDarkMode] = useState(false);
+  const [projects, setProjects] = useState();
 
   const clickDarkMode = (e) => {
     if (document.documentElement.classList.contains("dark")) {
@@ -16,6 +17,15 @@ export function GlobalProvider({ children }) {
     }
   };
 
-  useEffect(() => {}, [darkMode]);
-  return <GlobalContext.Provider value={{ darkMode, clickDarkMode }}>{children}</GlobalContext.Provider>;
+  useEffect(() => {
+    async function getProjects() {
+      const result = await fetch("https://portfolio23-a3204-default-rtdb.firebaseio.com/projects.json").then((res) =>
+        res.json()
+      );
+      setProjects(result);
+    }
+    getProjects();
+  }, [darkMode]);
+
+  return <GlobalContext.Provider value={{ darkMode, clickDarkMode, projects }}>{children}</GlobalContext.Provider>;
 }

@@ -1,12 +1,14 @@
-import * as data from "../data/temp";
+import { useContext } from "react";
 import { Link, useParams, Navigate } from "react-router-dom";
 import Slider from "react-slick";
 import { PrevArrow, NextArrow } from "../components/SlickArrows";
+import { GlobalContext } from "../components/Context";
 
 export default function Detail() {
   const { id } = useParams();
+  const { projects } = useContext(GlobalContext);
 
-  const project = data.projects[id - 1];
+  const project = projects[id - 1];
 
   if (!project) {
     return <Navigate to="/*" replace="true" />;

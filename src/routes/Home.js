@@ -14,20 +14,22 @@ import {
   Sticky,
 } from "react-scroll-motion";
 import { GlobalContext } from "../components/Context";
-import { projects } from "../data/temp";
 
 export default function Home() {
-  const { darkMode } = useContext(GlobalContext);
+  const { darkMode, projects } = useContext(GlobalContext);
+
+  console.log("HE?", projects);
 
   return (
     <ScrollContainer className="relative z-10 text-center font-color dark:darkmode">
       <ScrollPage className="">
-        <section className="w-100 h-screen center font-extrabold tracking-tighter bg-cyan-500 dark:text-cyan-300 dark:bg-transparent">
-          <div className="fs-0   text-white dark:text-cyan-300 max-w-xl relative z-50">Byul Kim.</div>
-          <div className="fs-1   text-gray-500 mt-3 dark:text-white relative z-50">Web Developer</div>
+        <section className="w-full h-screen center font-extrabold tracking-tighter bg-cyan-500 dark:text-cyan-300 dark:bg-transparent">
+          <div className="fs-0 w-full text-white dark:text-cyan-300 max-w-xl relative z-50">Byul Kim.</div>
+          <div className="fs-1 text-gray-500 mt-3 dark:text-white relative z-50">Web Developer</div>
           <div className="fixed bottom-0 p-5 z-0 down-arrow ">
             <i className="fa-solid fa-chevron-down"></i>
           </div>
+
           {darkMode ? (
             <div></div>
           ) : (
@@ -85,43 +87,47 @@ export default function Home() {
       </ScrollPage>
 
       {/* PROJECTS */}
-      <ScrollPage className="">
-        <Animator className="z-20" animation={batch(StickyIn(), FadeIn(), MoveOut())}>
-          <div className="w-screen">
-            <div className="font-bold fs-2">{projects[0].title}</div>
-            <div className="fs-4 mt-2">{projects[0].summary}</div>
-            <div className="fs-5 mt-10 text-upper">
-              <Link to={`/projects/${projects[0].id}`} className="btns3">
-                View Project
-              </Link>
-            </div>
-          </div>
-        </Animator>
-        <Animator className="center" animation={batch(MoveIn(), MoveOut(0, -100), FadeOut())}>
-          <div className="thumb relative w-100 max-w-2xl m-7 overflow-hidden opacity-50">
-            <img src={projects[0].thumb} alt={projects[0].title} className="w-100" />
-          </div>
-        </Animator>
-      </ScrollPage>
-
-      <ScrollPage className="">
-        <Animator className="z-20" animation={batch(StickyIn(), FadeIn(), MoveOut())}>
-          <div className="w-screen">
-            <div className="font-bold fs-2">{projects[1].title}</div>
-            <div className="fs-4 mt-2">{projects[1].summary}</div>
-            <div className="fs-5 mt-10 text-upper">
-              <Link to={`/projects/${projects[1].id}`} className="btns3">
-                View Project
-              </Link>
-            </div>
-          </div>
-        </Animator>
-        <Animator className="center" animation={batch(MoveIn(), MoveOut(0, -100), FadeOut())}>
-          <div className="thumb relative w-100 max-w-2xl m-7 overflow-hidden opacity-50">
-            <img src={projects[1].thumb} alt={projects[1].title} className="w-100" />
-          </div>
-        </Animator>
-      </ScrollPage>
+      {projects && (
+        <>
+          {" "}
+          <ScrollPage className="">
+            <Animator className="z-20" animation={batch(StickyIn(), FadeIn(), MoveOut())}>
+              <div className="w-screen">
+                <div className="font-bold fs-2">{projects[0].title}</div>
+                <div className="fs-4 mt-2">{projects[0].summary}</div>
+                <div className="fs-5 mt-10 text-upper">
+                  <Link to={`/projects/${projects[0].id}`} className="btns3">
+                    View Project
+                  </Link>
+                </div>
+              </div>
+            </Animator>
+            <Animator className="center" animation={batch(MoveIn(), MoveOut(0, -100), FadeOut())}>
+              <div className="thumb relative w-100 max-w-2xl m-7 overflow-hidden opacity-50">
+                <img src={projects[0].thumb} alt={projects[0].title} className="w-100" />
+              </div>
+            </Animator>
+          </ScrollPage>
+          <ScrollPage className="">
+            <Animator className="z-20" animation={batch(StickyIn(), FadeIn(), MoveOut())}>
+              <div className="w-screen">
+                <div className="font-bold fs-2">{projects[1].title}</div>
+                <div className="fs-4 mt-2">{projects[1].summary}</div>
+                <div className="fs-5 mt-10 text-upper">
+                  <Link to={`/projects/${projects[1].id}`} className="btns3">
+                    View Project
+                  </Link>
+                </div>
+              </div>
+            </Animator>
+            <Animator className="center" animation={batch(MoveIn(), MoveOut(0, -100), FadeOut())}>
+              <div className="thumb relative w-100 max-w-2xl m-7 overflow-hidden opacity-50">
+                <img src={projects[1].thumb} alt={projects[1].title} className="w-100" />
+              </div>
+            </Animator>
+          </ScrollPage>{" "}
+        </>
+      )}
     </ScrollContainer>
   );
 }
