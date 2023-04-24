@@ -49,7 +49,7 @@ export default function Projects() {
       <div className="title center m-10">Projects.</div>
       <div className="flex-wrap center gap-3 mt-2">
         <button onClick={clearFilter} className="hover:text-rose-500 dark:hover:text-rose-300">
-          Clear
+          Back to full list
         </button>
         <div className="text-center">
           {tags

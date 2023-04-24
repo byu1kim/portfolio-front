@@ -1,6 +1,5 @@
 import { useState, useEffect, useContext } from "react";
 import { GlobalContext } from "../components/Context";
-import { skills } from "../data/temp";
 import myPDF from "../data/byul_resume.pdf";
 
 export default function About() {
@@ -82,11 +81,14 @@ export default function About() {
         <div className="sub-title my-5">Skills</div>
         {skills &&
           skills.map((skill, index) => (
-            <div key={index} className="flex mb-5">
-              <div className="w-full capitalize font-bold sm:w-1/4">{skill.category}</div>
-              <div className="w-full grid sm:w-3/4 sm:grid-cols-2 md:grid-cols-4">
+            <div key={index} className="flex mb-10">
+              <div className="w-1/3 capitalize font-bold sm:w-1/4">{skill.category}</div>
+              <div className="w-2/3 grid grid-cols-2 gap-5 sm:w-3/4 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5">
                 {skill.skills.map((item, index) => (
-                  <div key={index}>{item.name}</div>
+                  <div key={index} className="center gap-2">
+                    <img src={item.img} className="w-10 h-10 rounded-full shadow" alt={item.name} />
+                    <div className="text-xs bg-gray-200 w-fit rounded px-1">{item.name}</div>
+                  </div>
                 ))}
               </div>
             </div>

@@ -47,7 +47,7 @@
     @apply flex flex-col justify-center items-center;
   }
   .btns2 {
-    @apply text-point rounded border-none text-point;
+    @apply text-cyan-500 dark:text-cyan-300 rounded border-none;
   }
   .btns3 {
     @apply px-2 py-1 tracking-tight bg-cyan-500 text-white hover:bg-rose-400 hover:tracking-wider dark:text-black dark:bg-cyan-300 dark:hover:bg-rose-400;

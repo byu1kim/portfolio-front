@@ -17,11 +17,8 @@ Protfolio showcase 2023 built by React
 
 ### TO DO
 
-- [ ] navigation
-- [ ] project upload
+- [ ] project : youtube thumbnail, youtube redeploy, pickngo deploy, add details
 - [ ] resume download
 - [ ] comments (Lambda?)
 - [ ] skills to icons
 - [ ] get in touch
-- [ ] data to firebase/or other db
-- [ ] scroll effect
