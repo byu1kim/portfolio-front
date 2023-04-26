@@ -1,4 +1,4 @@
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 import { Link, useParams, Navigate } from "react-router-dom";
 import Slider from "react-slick";
 import { PrevArrow, NextArrow } from "../components/SlickArrows";
@@ -9,6 +9,10 @@ export default function Detail() {
   const { projects } = useContext(GlobalContext);
 
   const project = projects[id - 1];
+
+  useEffect(() => {
+    document.title = project.title;
+  });
 
   if (!project) {
     return <Navigate to="/*" replace="true" />;

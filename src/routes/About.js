@@ -7,6 +7,7 @@ export default function About() {
   const [skills, setSkills] = useState();
 
   useEffect(() => {
+    document.title = `About Byul`;
     async function getSkills() {
       const result = await fetch("https://portfolio23-a3204-default-rtdb.firebaseio.com/skills.json").then((res) =>
         res.json()

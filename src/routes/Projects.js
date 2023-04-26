@@ -9,6 +9,7 @@ export default function Projects() {
   const [filters, setFilters] = useState();
 
   useEffect(() => {
+    document.title = "Projects";
     async function getTags() {
       const result = await fetch("https://portfolio23-a3204-default-rtdb.firebaseio.com/tags.json").then((res) =>
         res.json()

@@ -1,4 +1,4 @@
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 import { Link } from "react-router-dom";
 import {
   Animator,
@@ -17,6 +17,10 @@ import { GlobalContext } from "../components/Context";
 
 export default function Home() {
   const { darkMode, projects } = useContext(GlobalContext);
+
+  useEffect(() => {
+    document.title = `Byul's Portfolio`;
+  }, []);
 
   return (
     <ScrollContainer className="relative z-10 text-center font-color dark:darkmode">
