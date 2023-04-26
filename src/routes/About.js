@@ -87,7 +87,7 @@ export default function About() {
                 {skill.skills.map((item, index) => (
                   <div key={index} className="center gap-2">
                     <img src={item.img} className="w-10 h-10 rounded-full shadow" alt={item.name} />
-                    <div className="text-xs bg-gray-200 w-fit rounded px-1">{item.name}</div>
+                    <div className="text-xs bg-gray-200 w-fit rounded px-1 dark:text-gray-900">{item.name}</div>
                   </div>
                 ))}
               </div>
@@ -108,11 +108,21 @@ export default function About() {
               </div>
             </div>
 
-            <div className="flex">
+            <div className="flex mb-5">
               <i className="fa-solid fa-location-dot icon px-3.5"></i>
               <div className="self-center px-5">
                 <div className="font-bold">Location</div>
                 <div>Vancouver, BC</div>
+              </div>
+            </div>
+
+            <div className="flex">
+              <i className="fa-solid fa-star icon"></i>
+              <div className="self-center px-5">
+                <div className="font-bold">How to pronounce my name</div>
+                <div>
+                  <code className=""> &#91; bjʌl &#93;</code> It means 'Star'
+                </div>
               </div>
             </div>
           </div>

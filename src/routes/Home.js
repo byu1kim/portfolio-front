@@ -57,9 +57,15 @@ export default function Home() {
             Hello! I'm Byul, a web developer based in Vancouver. <br /> I've built various applications for myself,
             <br /> Now let me build something for you.
           </div>
+          <div className="mt-10">
+            <Link to="/about" className="btns3">
+              More about me
+            </Link>
+          </div>
         </Animator>
       </ScrollPage>
-      <ScrollPage className="title">
+
+      {/* <ScrollPage className="title">
         <Animator className="" animation={batch(Fade(), MoveIn(), StickyIn(), MoveOut(0, -300))}>
           <div className="w-screen max-w-3xl p-5"> How do I pronounce your name?</div>
         </Animator>
@@ -76,7 +82,7 @@ export default function Home() {
             </div>
           </div>
         </Animator>
-      </ScrollPage>
+      </ScrollPage> */}
 
       <ScrollPage className="title">
         <Animator animation={batch(Fade(), Sticky(), MoveOut())}>Recent Projects</Animator>
@@ -102,6 +108,33 @@ export default function Home() {
             <div className="thumb relative w-100 max-w-2xl m-7 overflow-hidden opacity-50">
               <img src={projects[0].thumb} alt={projects[0].title} className="w-100" />
             </div>
+          )}
+        </Animator>
+      </ScrollPage>
+
+      <ScrollPage className="">
+        <Animator className="z-20" animation={batch(StickyIn(), FadeIn(), MoveOut())}>
+          {projects && (
+            <>
+              <div className="w-screen">
+                <div className="font-bold fs-2">{projects[2].title}</div>
+                <div className="fs-4 mt-2">{projects[2].summary}</div>
+                <div className="fs-5 mt-10 text-upper">
+                  <Link to={`/projects/${projects[2].id}`} className="btns3">
+                    View Project
+                  </Link>
+                </div>
+              </div>
+            </>
+          )}
+        </Animator>
+        <Animator className="center" animation={batch(MoveIn(), MoveOut(), FadeOut())}>
+          {projects && (
+            <>
+              <div className="thumb relative w-100 max-w-2xl m-7 overflow-hidden opacity-50">
+                <img src={projects[2].thumb} alt={projects[2].title} className="w-100" />
+              </div>
+            </>
           )}
         </Animator>
       </ScrollPage>

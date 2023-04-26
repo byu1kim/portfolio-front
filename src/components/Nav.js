@@ -59,7 +59,7 @@ const Nav = () => {
         <div
           className={` ${
             navOpen ? "opacity-100" : "opacity-0 hidden"
-          } w-full p-4 pt-0 md:w-1/3 md:order-2 md:center md:p-0  dark:bg-gray-900 `}
+          } w-full p-4 pt-0 md:w-1/3 md:order-2 md:center md:p-0  `}
           id="menu"
         >
           <ul className="uppercase md:flex md:gap-3 md:items-center">
