@@ -4,21 +4,30 @@ Protfolio showcase 2023 built by React
 
 ## Technologies
 
-- React
+- Frontend : React, HTML/CSS
+- Backend : Firebase
+- Deployment : Netlify
+- Framework : Tailwind
+- Libraries : Slick, react-awesome-reveal, react-scroll-parallax, react-tsparticles
 
 ## Features
 
 - Dark/Light Mode
 - Scroll on animation
+- Image slide show in detail page
 
 ## Deployed website
 
-[url](url)
+[https://byulkim.netlify.app/](https://byulkim.netlify.app/)
 
 ### TO DO
 
-- [ ] project : youtube thumbnail, youtube redeploy, pickngo deploy, add details
-- [ ] resume download
-- [ ] comments (Lambda?)
-- [ ] skills to icons
-- [ ] get in touch
+- [ ] Youtube clone : deploy
+- [ ] Web scrap : course, deploy
+- [ ] Agilitek :
+- [ ] Pick and go : deploy
+- [ ] Instagram clone
+- [ ] ChatGPT clone
+- [ ] Cindy : Python
+- [ ] Sue : Serverless?
+- [ ] Seotda

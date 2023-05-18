@@ -1,4 +1,4 @@
-import { useContext, useEffect } from "react";
+import { useContext, useEffect, useState } from "react";
 import { Link, useParams, Navigate } from "react-router-dom";
 import Slider from "react-slick";
 import { PrevArrow, NextArrow } from "../components/SlickArrows";
@@ -8,14 +8,19 @@ export default function Detail() {
   const { id } = useParams();
   const { projects } = useContext(GlobalContext);
 
-  const project = projects[id - 1];
+  let project;
 
   useEffect(() => {
-    document.title = project.title;
-  });
+    if (project) {
+      document.title = project.title;
+    }
+  }, [project]);
 
-  if (!project) {
-    return <Navigate to="/*" replace="true" />;
+  if (projects) {
+    project = projects.find((item) => item.id == id);
+    if (!project) {
+      return <Navigate to="/*" replace="true" />;
+    }
   }
 
   const settings = {
@@ -40,42 +45,44 @@ export default function Detail() {
       </div>
       <hr />
 
-      <div className="mt-10 mb-3 title md:text-5xl lg:text-5xl text-center"> {project.title}</div>
-      <div className="mb-5 font-color text-center pb-5 text-lg md:text-xl">{project.summary}</div>
+      {project && (
+        <>
+          <div className="mt-10 mb-3 title md:text-5xl lg:text-5xl text-center"> {project.title}</div>
+          <div className="mb-5 font-color text-center pb-5 text-lg md:text-xl">{project.summary}</div>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
+            <div className="mb-5">
+              <Slider {...settings} className="">
+                <img src={project.thumb} alt={project.title} className="bg-rose-100" />
+                {project.images.map((i) => (
+                  <img src={i} key={i} alt={project.title} />
+                ))}
+              </Slider>
+            </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
-        <div className="mb-5">
-          <Slider {...settings} className="">
-            <img src={project.thumb} alt={project.title} className="bg-rose-100" />
-            {project.images.map((i) => (
-              <img src={i} key={i} alt={project.title} />
-            ))}
-          </Slider>
-        </div>
-
-        {/* */}
-        <div className="">
-          <div className="sub-title">Detail</div>
-          <div className="pt-3">{project.detail}</div>
-          <div className="pt-8 sub-title">Technologies</div>
-          <div className="pt-3 flex  text-sm">
-            {project.tags.map((item) => (
-              <div key={item.id} className="bg-gray-300 mr-2 rounded px-2 font-bold text-black">
-                {item.name}
+            {/* */}
+            <div className="">
+              <div className="sub-title">Detail</div>
+              <div className="pt-3" dangerouslySetInnerHTML={{ __html: project.detail }} />
+              <div className="pt-8 sub-title">Technologies</div>
+              <div className="pt-3 flex  text-sm">
+                {project.tags.map((item) => (
+                  <div key={item.id} className="bg-gray-300 mr-2 rounded px-2 font-bold text-black">
+                    {item.name}
+                  </div>
+                ))}
               </div>
-            ))}
+              <div className="pt-8 sub-title">Website</div>
+              <div className="pt-3 hover:text-rose-500 dark:hover:text-rose-300">
+                <a href={project.website}>{project.website}</a>
+              </div>
+              <div className="pt-8 sub-title">Github</div>
+              <div className="pt-3 hover:text-rose-500 dark:hover:text-rose-300">
+                <a href={project.github}>{project.github}</a>
+              </div>
+            </div>
           </div>
-          <div className="pt-8 sub-title">Website</div>
-          <div className="pt-3 hover:text-rose-500 dark:hover:text-rose-300">
-            <a href={project.website}>{project.website}</a>
-          </div>
-
-          <div className="pt-8 sub-title">Github</div>
-          <div className="pt-3 hover:text-rose-500 dark:hover:text-rose-300">
-            <a href={project.github}>{project.github}</a>
-          </div>
-        </div>
-      </div>
+        </>
+      )}
     </main>
   );
 }

@@ -20,14 +20,14 @@ const Nav = () => {
   };
 
   const handleClick = () => {
-    let mediaQuery = window.matchMedia("(min-width: 768px");
+    let mediaQuery = window.matchMedia("(min-width: 768px)");
     if (!mediaQuery.matches) {
       setNavOpen(false);
     }
   };
 
   useEffect(() => {
-    let mediaQuery = window.matchMedia("(min-width: 768px");
+    let mediaQuery = window.matchMedia("(min-width: 768px)");
     mediaQuery.addEventListener("change", isDesktop);
     if (mediaQuery.matches) {
       setNavOpen(true);

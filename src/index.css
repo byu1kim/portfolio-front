@@ -58,6 +58,18 @@
   .icon {
     @apply bg-cyan-500 h-full p-3 rounded-full text-white dark:bg-cyan-300 dark:text-gray-900;
   }
+  h5 {
+    @apply font-bold mt-5 mb-3 text-xl;
+  }
+  p {
+    @apply mb-3 text-justify;
+  }
+}
+
+p {
+}
+
+h5 {
 }
 
 /* CSS */
