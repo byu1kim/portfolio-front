@@ -64,9 +64,9 @@ export default function Detail() {
               <div className="sub-title">Detail</div>
               <div className="pt-3" dangerouslySetInnerHTML={{ __html: project.detail }} />
               <div className="pt-8 sub-title">Technologies</div>
-              <div className="pt-3 flex  text-sm">
+              <div className="pt-3 flex flex-wrap gap-3 text-sm">
                 {project.tags.map((item) => (
-                  <div key={item.id} className="bg-gray-300 mr-2 rounded px-2 font-bold text-black">
+                  <div key={item.id} className="bg-gray-300 rounded font-bold px-2 text-black">
                     {item.name}
                   </div>
                 ))}

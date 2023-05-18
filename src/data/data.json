@@ -4,14 +4,18 @@
       "id": 9,
       "title": "Agilitek Project",
       "summary": "BCIT Industry Project Sponsored by Agilitek",
-      "detail": "<p>This project was an industry project at BCIT, developed by a team of five and sponsored by Agiliteck Solutions. The objective was to create a web application that enables users to upload CSV files containing anonymized Person IDs. These lists are stored in a Postgres database and assigned a Segment Name. Users can then select a segment for analysis and explore other highly represented segments within the chosen one.</p><p>The application also allows users to define dynamic rulesets for subsets of transactions based on criteria such as price or event. Users can compare one or more segments to determine the likelihood of purchasing specific products based on the defined rulesets.</p><h5>Responsibilities</h5><p>In the project, my main responsibility was to list the segments and implement a favourite button for each segment. This was achieved by bridging the favourite and segments tables. To accomplish this, I utilized the react-table third-party library, which provided built-in features for sorting, filtering, and pagination.</p><h5>Challenges</h5><p>Dealing with a large number of data entries in the transaction table presented challenges in terms of fetching and managing the data efficiently. Initially, we attempted to fetch data using parallel data fetch, sending API calls with each segment Id. However, we encountered issues with the backend automatically triggering a 500 error after 10 seconds. To overcome this, we implemented batching, grouping API calls up to 5 endpoints. This reduced the time to 12 seconds with around 40 segments. Ultimately, we optimized further by sending a single request to a single endpoint with a single query. This allowed all calculations to be handled on the database side, resulting in faster data retrieval.</p><h5>Key Learnings</h5><p>Throughout this project, I realized the importance of focusing on the customer experience and providing the right direction for the web application. Moreover, working with real data in a project sponsored by an industry partner provided valuable insights and a more authentic project experience.</p>",
-      "website": "",
+      "detail": "<p>This project was an industry project at BCIT, developed by a team of five and sponsored by Agiliteck Solutions. The objective was to create a web application that enables users to upload CSV files containing anonymized Person IDs. These lists are stored in a Postgres database and assigned a Segment Name. Users can then select a segment for analysis and explore other highly represented segments within the chosen one.</p><p>The application also allows users to define dynamic rulesets for subsets of transactions based on criteria such as price or event. Users can compare one or more segments to determine the likelihood of purchasing specific products based on the defined rulesets.</p><h5>Responsibilities</h5><p>In the project, my main responsibility was to list the segments and implement a favourite button for each segment. This was achieved by bridging the favourite and segments tables. To accomplish this, I utilized the react-table third-party library, which provided built-in features for sorting, filtering, and pagination.</p><p>I also took charge of authentication using AWS Cognito and the AWS Amplify library on the frontend. Instead of using a UI library, I learned the details of the classes in AWS Amplify, allowing me to gain a deeper understanding of the authentication process.</p><h5>Challenges</h5><p>Dealing with a large number of data entries in the transaction table presented challenges in terms of fetching and managing the data efficiently. Initially, we attempted to fetch data using parallel data fetch, sending API calls with each segment Id. However, we encountered issues with the backend automatically triggering a 500 error after 10 seconds. To overcome this, we implemented batching, grouping API calls up to 5 endpoints. This reduced the time to 12 seconds with around 40 segments. Ultimately, we optimized further by sending a single request to a single endpoint with a single query. This allowed all calculations to be handled on the database side, resulting in faster data retrieval.</p><h5>Key Learnings</h5><p>Throughout this project, I realized the importance of focusing on the customer experience and providing the right direction for the web application. Moreover, working with real data in a project sponsored by an industry partner provided valuable insights and a more authentic project experience.</p><h5>Test Account</h5>username: agilitek<br>passwordd: Agilitek2023!",
+      "website": "https://d3j8hsov25hvsw.cloudfront.net/",
       "github": "https://github.com/djk88/Agilitek-project2-bcit",
       "thumb": "",
       "images": ["https://i.imgur.com/zw3OMaI.png"],
       "tags": [
         { "id": 5, "name": "React" },
         { "id": 7, "name": "AWS" },
+        { "id": 0, "name": "SAM" },
+        { "id": 0, "name": "Lambda" },
+        { "id": 0, "name": "API Gateway" },
+        { "id": 0, "name": "Cognito" },
         { "id": 10, "name": "PostgreSQL" },
         { "id": 17, "name": "Tailwind" }
       ]
@@ -78,6 +82,8 @@
       "tags": [
         { "id": 5, "name": "React" },
         { "id": 7, "name": "AWS" },
+        { "id": 0, "name": "Lambda" },
+        { "id": 0, "name": "API Gateway" },
         { "id": 10, "name": "PostgreSQL" },
         { "id": 17, "name": "Tailwind" }
       ]
