@@ -88,11 +88,11 @@ export default function Projects() {
                     <div className="text-sha md:absolute md:h-full md:w-full md:z-30 md:top-0 md:center md:bg-white/80 md:dark:bg-gray-900/80 md:opacity-0 md:hover:opacity-100">
                       <div className="font-bold text-xl pt-5">{item.title}</div>
                       <div className="text-md">{item.summary}</div>
-                      <div className="text-rose-400 mt-2 text-xs dark:text-rose-500">
+                      <div className="text-rose-400 mt-2 text-xs dark:text-rose-500 flex flex-wrap gap-1 md:justify-center">
                         {item.tags.map((t, index) => (
                           <span
                             key={index}
-                            className="opacity-70 mr-2 border border-rose-400 px-1 bg-white dark:bg-gray-900 dark:border-rose-500"
+                            className="opacity-70 border border-rose-400 px-1 bg-white dark:bg-gray-900 dark:border-rose-500"
                           >
                             {t.name}
                           </span>

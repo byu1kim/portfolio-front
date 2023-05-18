@@ -4,18 +4,31 @@
       "id": 9,
       "title": "Agilitek Project",
       "summary": "BCIT Industry Project Sponsored by Agilitek",
-      "detail": "<p>This project was an industry project at BCIT, developed by a team of five and sponsored by Agiliteck Solutions. The objective was to create a web application that enables users to upload CSV files containing anonymized Person IDs. These lists are stored in a Postgres database and assigned a Segment Name. Users can then select a segment for analysis and explore other highly represented segments within the chosen one.</p><p>The application also allows users to define dynamic rulesets for subsets of transactions based on criteria such as price or event. Users can compare one or more segments to determine the likelihood of purchasing specific products based on the defined rulesets.</p><h5>Responsibilities</h5><p>In the project, my main responsibility was to list the segments and implement a favourite button for each segment. This was achieved by bridging the favourite and segments tables. To accomplish this, I utilized the react-table third-party library, which provided built-in features for sorting, filtering, and pagination.</p><p>I also took charge of authentication using AWS Cognito and the AWS Amplify library on the frontend. Instead of using a UI library, I learned the details of the classes in AWS Amplify, allowing me to gain a deeper understanding of the authentication process.</p><h5>Challenges</h5><p>Dealing with a large number of data entries in the transaction table presented challenges in terms of fetching and managing the data efficiently. Initially, we attempted to fetch data using parallel data fetch, sending API calls with each segment Id. However, we encountered issues with the backend automatically triggering a 500 error after 10 seconds. To overcome this, we implemented batching, grouping API calls up to 5 endpoints. This reduced the time to 12 seconds with around 40 segments. Ultimately, we optimized further by sending a single request to a single endpoint with a single query. This allowed all calculations to be handled on the database side, resulting in faster data retrieval.</p><h5>Key Learnings</h5><p>Throughout this project, I realized the importance of focusing on the customer experience and providing the right direction for the web application. Moreover, working with real data in a project sponsored by an industry partner provided valuable insights and a more authentic project experience.</p><h5>Test Account</h5>username: agilitek<br>passwordd: Agilitek2023!",
+      "time": "APR 2023 - MAY 2023",
+      "detail": "<p>This project was an industry project at BCIT, developed by a team of five and sponsored by Agiliteck Solutions. The objective was to create a web application that enables users to upload CSV files containing anonymized Person IDs. These lists are stored in a Postgres database and assigned a Segment Name. Users can then select a segment for analysis and explore other highly represented segments within the chosen one.</p><p>The application also allows users to define dynamic rulesets for subsets of transactions based on criteria such as price or event. Users can compare one or more segments to determine the likelihood of purchasing specific products based on the defined rulesets.</p><h5>Responsibilities</h5><p>In the project, my main responsibility was to list the segments and implement a favourite button for each segment. This was achieved by bridging the favourite and segments tables. To accomplish this, I utilized the react-table third-party library, which provided built-in features for sorting, filtering, and pagination.</p><p>I also took charge of authentication using AWS Cognito and the AWS Amplify library on the frontend. Instead of using a UI library, I learned the details of the classes in AWS Amplify, allowing me to gain a deeper understanding of the authentication process.</p><h5>Challenges</h5><p>Dealing with a large number of data entries in the transaction table presented challenges in terms of fetching and managing the data efficiently. Initially, we attempted to fetch data using parallel data fetch, sending API calls with each segment Id. However, we encountered issues with the backend automatically triggering a 500 error after 10 seconds. To overcome this, we implemented batching, grouping API calls up to 5 endpoints. This reduced the time to 12 seconds with around 40 segments. Ultimately, we optimized further by sending a single request to a single endpoint with a single query. This allowed all calculations to be handled on the database side, resulting in faster data retrieval.</p><h5>Key Learnings</h5><p>Throughout this project, I realized the importance of focusing on the customer experience and providing the right direction for the web application. Moreover, working with real data in a project sponsored by an industry partner provided valuable insights and a more authentic project experience.</p>",
       "website": "https://d3j8hsov25hvsw.cloudfront.net/",
+      "test": "<h6>Test Account</h6>username: agilitek<br>passwordd: Agilitek2023!",
       "github": "https://github.com/djk88/Agilitek-project2-bcit",
-      "thumb": "",
-      "images": ["https://i.imgur.com/zw3OMaI.png"],
+      "thumb": "https://i.imgur.com/wQp0E6T.png",
+      "images": [
+        "https://i.imgur.com/96kTF9C.jpg",
+        "https://i.imgur.com/QznUbCV.jpg",
+        "https://i.imgur.com/HVNiKWX.jpg",
+        "https://i.imgur.com/uwCiftj.jpg",
+        "https://i.imgur.com/DtxBHTY.jpg",
+        "https://i.imgur.com/qv3HeLF.jpg",
+        "https://i.imgur.com/FGkSBHL.jpg",
+        "https://i.imgur.com/0K3OW6I.jpg",
+        "https://i.imgur.com/xp6LowY.jpg"
+      ],
+
       "tags": [
         { "id": 5, "name": "React" },
         { "id": 7, "name": "AWS" },
-        { "id": 0, "name": "SAM" },
-        { "id": 0, "name": "Lambda" },
-        { "id": 0, "name": "API Gateway" },
-        { "id": 0, "name": "Cognito" },
+        { "id": 100, "name": "SAM" },
+        { "id": 101, "name": "Lambda" },
+        { "id": 102, "name": "API Gateway" },
+        { "id": 103, "name": "Cognito" },
         { "id": 10, "name": "PostgreSQL" },
         { "id": 17, "name": "Tailwind" }
       ]
@@ -24,6 +37,7 @@
       "id": 10,
       "title": "Pick and Go",
       "summary": "BCIT Internal project with ASP .NET",
+      "time": "OCT 2023 - APR 2023",
       "detail": "<p>Pick and GO is an internal ASP. NET project developed by a team of five members at BCIT. The goal of the project was to create a scalable business solution in the food delivery app industry, considering the abundance of well-established food delivery services available.</p><p>Initially, our team aimed to develop an app specifically designed for restaurants, focusing on implementing a pick-up order system. This involved creating an administrative page for businesses and an intuitive ordering interface for customers.</p><h5>Responsibilities</h5><p>Within the team, I held the responsibility of building the overview page, which served as the dashboard for the admin. This page displayed key information such as sales summaries by dates, customer status, and ingredient availability. </p><p>Additionally, I took the lead in defining the overall visual style of the application. Using Figma, I provided a brief overview of the app's design and colour scheme. Furthermore, I ensured that the entire application was fully responsive by incorporating Bootstrap's responsive features.</p><p>I also took charge of customize page. This page played an important role in facilitating customer interactions and acted as a bridge between the favourite and shopping cart functionalities. Using jQuery, I implemented dynamic updates and ensured that the page responded promptly to any changes made by the customer.</p><h5>Challenges</h5><p>One of the main challenges I encountered revolved around the implementation of client-side and server-side interactions. Being responsible for the customization page required me to tackle both aspects. This often led to encountering numerous errors and bugs during the development process. However, these challenges became invaluable opportunities for learning. Through persistent problem-solving, I deepened my understanding of both client-side and server-side interactions and improved my ability to diagnose and resolve issues effectively.</p><h5>Key Learnings</h5><p>Working on this project as part of a long-term team was a new experience for me. The six-month duration allowed me to immerse myself in the development process and gain a deeper understanding of collaboration, teamwork, and effective communication. As a result of our collective efforts, we were extremely proud of the final product delivered.</p>",
       "website": "",
       "github": "https://github.com/kchong30/pick-and-go",
@@ -46,30 +60,13 @@
       ]
     },
     {
-      "id": 12,
-      "title": "Movie App",
-      "summary": "Movie list appplication with React",
-      "detail": "<h5>Overview</h5><p>The Movie app is a frontend application built using the React JavaScript library. It was created as the final assignment for a React course at BCIT SST. The app allows users to search for movies, view movie details, and perform actions like adding movies to their favourites.</p><h5>Challenges</h5><p>One of the main challenges I encountered was implementing the favourite button functionality using Redux. To accomplish this, I had to grasp the concept of state management in React, including the use of useContext and useReducer. In order to successfully build the app, I decided to take an additional online course on Redux, which helped me understand how Redux simplifies managing actions and state in JavaScript frameworks.</p>",
-      "website": "https://byu1kim.github.io/react-movie-app",
-      "github": "https://github.com/byu1kim/react-movie-app",
-      "thumb": "https://i.imgur.com/Z56waMb.png",
-      "images": [
-        "https://i.imgur.com/8L2FnyK.jpg",
-        "https://i.imgur.com/c56M1kX.jpg",
-        "https://i.imgur.com/h6Azhf7.jpg",
-        "https://i.imgur.com/5BTkU6y.jpg"
-      ],
-      "tags": [
-        { "id": 5, "name": "React" },
-        { "id": 14, "name": "CSS" }
-      ]
-    },
-    {
       "id": 11,
       "title": "Wordbook",
       "summary": "A custom vocabulary list using Lambda function",
+      "time": "FEB 2023 - MAY 2023",
       "detail": "<p>Wordbook is an app I created for myself while studying English. When I was learning English, I found it tedious to write down all the vocabulary on small notes. To make things easier and more efficient, I wanted a way to quickly type and access my word list on my computer or phone, without the need for physical notes. This app allows users to add their own words, track their memorization progress, and hide or show words during review. Additionally, the app is registered on the Google search engine.</p><h5>Challenges</h5><p>Initially, I used an EC2 instance on AWS with React for the frontend and Node.js for the backend. However, I encountered issues when I was unexpectedly charged for using the EC2 instance. To overcome this, I needed to find a cheaper alternative that would still allow me to deploy and use the app. As a result, I shifted the backend to a serverless architecture using AWS Lambda and API Gateway, which proved to be more cost-effective.</p><p>After migrating to Lambda functions, I noticed a decrease in app performance, likely due to using a free database plan. To optimize data fetching and reduce latency, I focused on database optimization. During this process, I explored using both MongoDB and PostgreSQL, and ultimately decided that PostgreSQL would be a better choice for its scalability and faster performance.</p><p>Since I intended to use this app for myself and potentially expand it to other users, I put great emphasis on building a scalable application. To achieve this, I invested time in implementing AWS Cognito, which ensures that only logged-in users can access and manage their own word lists.</p><h5>Key Learnings</h5><p>Throughout the project, I learned various aspects of development, including frontend, backend, and cloud infrastructure, to address the complexities of each component.</p>",
       "website": "https://byul-wordbook.netlify.app/",
+      "test": "<h6>Test Account</h6>username: admin<br>passwordd: Password1!",
       "github": "https://github.com/byu1kim/wordbook",
       "thumb": "https://i.imgur.com/lVRUw32.png",
       "images": [
@@ -82,10 +79,30 @@
       "tags": [
         { "id": 5, "name": "React" },
         { "id": 7, "name": "AWS" },
-        { "id": 0, "name": "Lambda" },
-        { "id": 0, "name": "API Gateway" },
+        { "id": 100, "name": "Lambda" },
+        { "id": 101, "name": "API Gateway" },
         { "id": 10, "name": "PostgreSQL" },
         { "id": 17, "name": "Tailwind" }
+      ]
+    },
+    {
+      "id": 12,
+      "title": "Movie App",
+      "summary": "Movie list appplication with React",
+      "time": "DEC 2022",
+      "detail": "<p>The Movie app is a frontend application built using the React JavaScript library. It was created as the final assignment for a React course at BCIT SST. The app allows users to search for movies, view movie details, and perform actions like adding movies to their favourites.</p><h5>Challenges</h5><p>One of the main challenges I encountered was implementing the favourite button functionality using Redux. To accomplish this, I had to grasp the concept of state management in React, including the use of useContext and useReducer. In order to successfully build the app, I decided to take an additional online course on Redux, which helped me understand how Redux simplifies managing actions and state in JavaScript frameworks.</p>",
+      "website": "https://byu1kim.github.io/react-movie-app",
+      "github": "https://github.com/byu1kim/react-movie-app",
+      "thumb": "https://i.imgur.com/Z56waMb.png",
+      "images": [
+        "https://i.imgur.com/8L2FnyK.jpg",
+        "https://i.imgur.com/c56M1kX.jpg",
+        "https://i.imgur.com/h6Azhf7.jpg",
+        "https://i.imgur.com/5BTkU6y.jpg"
+      ],
+      "tags": [
+        { "id": 5, "name": "React" },
+        { "id": 14, "name": "CSS" }
       ]
     },
     {
@@ -102,6 +119,7 @@
     {
       "id": 14,
       "title": "Byultube",
+      "time": "JAN 2023 - MAR 2023",
       "summary": "Youtube clone app using Node.js",
       "detail": "",
       "website": "https://byultube.onrender.com/",
@@ -124,6 +142,7 @@
       "id": 15,
       "title": "Portfolio",
       "summary": "Portfolio to showcase web apps",
+      "time": "MAR 2023 - APR 2023",
       "detail": "<p>Portfolio is designed to showcase my projects in an exceptional way. Users have the option to choose between dark mode and light mode, ensuring a visually appealing experience on both mobile and desktop devices. Additionally, users can easily filter projects based on tags, allowing them to quickly find projects of interest.</p><h5>Challenges</h5><p>One of the main challenges I faced while creating my portfolio was the need to make it stand out in order to capture the attention of recruiters and employers. Visual aesthetics played a crucial role, even though it was not my main area of expertise. To overcome this challenge, I extensively researched and drew inspiration from professional portfolio examples to create an outstanding design.</p><p>I also wanted to incorporate scroll animations using React, as it offers various benefits. I experimented with different styles of animations, such as parallax effects and libraries like react-reveal and animation-on-scroll, to add a dynamic and engaging touch to the portfolio. Furthermore, I had to carefully consider the implementation of dark mode to ensure that the portfolio looked visually appealing in both light and dark modes.</p>",
       "website": "https://byulkim.netlify.app/",
       "github": "https://github.com/byu1kim/portfolio23",
@@ -144,7 +163,7 @@
       "id": 16,
       "title": "Notes",
       "summary": "Personal study notes",
-      "detail": "",
+      "detail": "<p>I'm a big fan of note-taking because it provides a reliable place for me to store my class and study notes. Since starting my studies at BCIT, note-taking has been an essential part of my learning journey. Initially, I used the iPad note app  but I found myself spending too much time on it. So, I switched to using the Pages applications on my Mac.</p><p>One day, I was inspired by one of my instructors who had his own web-based notes. This motivated me to create my own web-based note-taking platform using Hugo. Now, I can access my notes from anywhere without needing to carry physical notebooks. I use this platform for all my courses, except for the ones I already covered in my previous notes.</p><p>Having my own web-based note platform has been incredibly convenient and accessible. It has become an indispensable resource for reviewing and reinforcing what I learn.</p>",
       "website": "https://byul-notes.netlify.app/",
       "github": "https://github.com/byu1kim/notes",
       "thumb": "https://i.imgur.com/KetMawg.png",
@@ -152,6 +171,7 @@
       "tags": [{ "id": 18, "name": "Hugo" }]
     }
   ],
+
   "tags": [
     { "id": 1, "name": "Javascript" },
     { "id": 2, "name": "Python" },

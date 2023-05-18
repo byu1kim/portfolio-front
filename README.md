@@ -12,7 +12,7 @@ Protfolio showcase 2023 built by React
 
 ## Features
 
-- Dark/Light Mode
+- Dark/Light Mode upon current time (later than 18)
 - Scroll on animation
 - Image slide show in detail page
 

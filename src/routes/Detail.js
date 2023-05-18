@@ -47,9 +47,13 @@ export default function Detail() {
 
       {project && (
         <>
-          <div className="mt-10 mb-3 title md:text-5xl lg:text-5xl text-center"> {project.title}</div>
-          <div className="mb-5 font-color text-center pb-5 text-lg md:text-xl">{project.summary}</div>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
+          <div className="mt-10 title md:text-5xl lg:text-5xl text-center"> {project.title}</div>
+          <div className="font-color my-2 text-center text-lg md:text-xl">{project.summary}</div>
+          <div className="text-center flex justify-center text-sm md:text-lg">
+            <span className="text-gray-400 px-1">{project.time}</span>
+          </div>
+
+          <div className="grid grid-cols-1 gap-10 mt-5">
             <div className="mb-5">
               <Slider {...settings} className="">
                 <img src={project.thumb} alt={project.title} className="bg-rose-100" />
@@ -75,6 +79,7 @@ export default function Detail() {
               <div className="pt-3 hover:text-rose-500 dark:hover:text-rose-300">
                 <a href={project.website}>{project.website}</a>
               </div>
+              <div dangerouslySetInnerHTML={{ __html: project.test }}></div>
               <div className="pt-8 sub-title">Github</div>
               <div className="pt-3 hover:text-rose-500 dark:hover:text-rose-300">
                 <a href={project.github}>{project.github}</a>

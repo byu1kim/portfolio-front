@@ -25,7 +25,17 @@ export function GlobalProvider({ children }) {
       setProjects(result);
     }
     getProjects();
-  }, [darkMode]);
+
+    const date = new Date();
+    const time = date.getHours();
+    if (time > 18 && time << 7) {
+      document.documentElement.classList.add("dark");
+      setDarkMode(true);
+    } else {
+      document.documentElement.classList.remove("dark");
+      setDarkMode(false);
+    }
+  }, []);
 
   return <GlobalContext.Provider value={{ darkMode, clickDarkMode, projects }}>{children}</GlobalContext.Provider>;
 }
