@@ -28,7 +28,7 @@ export function GlobalProvider({ children }) {
 
     const date = new Date();
     const time = date.getHours();
-    if (time > 18 && time << 7) {
+    if (time > 18 || time < 7) {
       document.documentElement.classList.add("dark");
       setDarkMode(true);
     } else {
